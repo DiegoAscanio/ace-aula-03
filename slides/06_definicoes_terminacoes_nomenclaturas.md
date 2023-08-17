@@ -4,7 +4,9 @@
 
 <div class="two-columns-50-50">
 
-<div class="normal">
+<div class="normal" style="margin: auto;">
+
+Elementos de circuitos são os componentes presentes em um circuito elétrico como resistores, capacitores, indutores, baterias, fontes (tensão / corrente), chaves, dentre outros.
 
 </div>
 <div class="small">
