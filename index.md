@@ -139,7 +139,7 @@ CEFET-MG DIGGDDV - Divinópolis, 2023.
 
 # Roteiro
 
-5. Análise de circuitos pelas Leis de Kirchoff da Corrente e da Tensão
+4. Análise de circuitos pelas Leis de Kirchoff da Corrente e da Tensão
     1. Construção de Sistemas de Equações Lineares à Partir do Método Thabatta / Khan Academy
     2. Representação dos Sistemas de Equações Lineares em Sua Forma Matricial
     3. Resolução dos Sistemas Lineares por Sistemas Computacionais de Álgebra (CAS - sympy, numpy)
@@ -149,12 +149,12 @@ CEFET-MG DIGGDDV - Divinópolis, 2023.
 
 # Roteiro
 
-4. Instrumentos de medida de grandezas elétricas
+5. Instrumentos de medida de grandezas elétricas
     1. Voltímetro (Tensão)
     2. Amperímetro (Corrente)
     3. Ohmímetro (Resistência)
     4. Multímetro (Múltiplas Grandezas)
-8. Lista 3 de Exercícios
+6. Lista 3 de Exercícios
 
 
 ---
