@@ -1,7 +1,7 @@
 
 
 <div class="grid-50-50">
-<div class="grid-element">
+<div class="grid-element normal">
 
 ## Algoritmo
 
@@ -19,6 +19,7 @@ $$
 </div>
 <div class="grid-element">
 
+<!-- _class: transparent -->
 ![grid-img](./img/circuito_final.png)
 
 </div>
