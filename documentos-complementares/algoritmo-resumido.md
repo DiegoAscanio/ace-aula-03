@@ -1,4 +1,4 @@
-# Algoritmo (passo-a-passo) 
+# Algoritmo Resumido (passo-a-passo) 
 
 1. Determine quais são os elementos (resistores e fontes) do circuito;
 2. Determine quais são os nós do circuito;
