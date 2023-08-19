@@ -8,7 +8,7 @@
 
 <div class="grid-element">
 
-Ao aplicar o passo 3, identificamos 3 Malhas \\(M_{1}, M_{2} \text{ e } M_{3}\\) (em azul) no circuito.
+Ao aplicar o passo 3, identificamos 3 Malhas $M_{1}, M_{2} \text{ e } M_{3}$ (em azul) no circuito.
 
 </div>
 
