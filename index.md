@@ -556,15 +556,15 @@ $$ i_{0} = i_{1} + i_{2} $$
 
 <div class="grid-element footnotesize" >
 
-Continuando a análise do circuito, verificamos que entre os nós $ N_{1} $ e $ N_{2} $ os resistores de $ 30 \Omega $ e de $ 20 \Omega $ estão em série, e portanto, possuem a mesma corrente $ i_{1} $. Verificamos também que um resistor de $ 15 \Omega $ conecta os nós $ N_{2} $ e $ N_{3} $, existindo assim, uma corrente que circula neste elemento. O sentido de circulação da corrente deve ser definido arbitrariamente (a seu critério) e você pode definir tanto uma corrente $ i_{3} $ que flui de $ N_{2} $ para $ N_{3} $ (direita para a esquerda) quanto de $ N_{3} $ para $ N_{2} $ (esquerda para a direita).
+Continuando a análise do circuito, verificamos que entre os nós $N_{1}$ e $N_{2}$ os resistores de $30 \Omega$ e de $20 \Omega$ estão em série, e portanto, possuem a mesma corrente $i_{1}$. Verificamos também que um resistor de $15 \Omega$ conecta os nós $N_{2}$ e $N_{3}$, existindo assim, uma corrente que circula neste elemento. O sentido de circulação da corrente deve ser definido arbitrariamente (a seu critério) e você pode definir tanto uma corrente $i_{3}$ que flui de $N_{2}$ para $N_{3}$ (direita para a esquerda) quanto de $N_{3}$ para $N_{2}$ (esquerda para a direita).
 
-Nessa resolução, arbitraremos que a corrente $ i_{3} $ flui de $ N_{3} $ para $ N_{2} $. Agora, escreveremos as equações da lei de Kirchhoff para a corrente para os nós $ N_{3} $ e $ N_{2} $ respectivamente. 
-- No nó $ N_{3} $ chega a corrente corrente $ i_{2} $ que se divide para as correntes $ i_{3} $ — que flui de $ N_{3} $ para $ N_{2} $ — e $ i_{4} $ que passa no resistor de $ 15 \Omega $ entre $ N_{3} $ e $ N_{4} $.
-    - Assim, a LKC no nó $N_{3}$ estabelece que $ i_{2} = i_{3} + i_{4} $.
-- No nó $ N_{2} $ chegam as correntes $ i_{1} $ e $ i_{3} $ e sai uma corrente $ i_{5} $ em direção aos dois resistores em série de $10 \Omega$ entre $N_{2}$ e $N_{4}$.
-    - Assim, a LKC no nó $N_{2}$ estabelece que $ i_{5} = i_{1} + i_{3} $
+Nessa resolução, arbitraremos que a corrente $i_{3}$ flui de $N_{3}$ para $N_{2}$. Agora, escreveremos as equações da lei de Kirchhoff para a corrente para os nós $N_{3}$ e $N_{2}$ respectivamente. 
+- No nó $N_{3}$ chega a corrente corrente $i_{2}$ que se divide para as correntes $i_{3}$ — que flui de $N_{3}$ para $N_{2}$ — e $i_{4}$ que passa no resistor de $15 \Omega$ entre $N_{3}$ e $N_{4}$.
+    - Assim, a LKC no nó $N_{3}$ estabelece que $i_{2} = i_{3} + i_{4}$.
+- No nó $N_{2}$ chegam as correntes $i_{1}$ e $i_{3}$ e sai uma corrente $i_{5}$ em direção aos dois resistores em série de $10 \Omega$ entre $N_{2}$ e $N_{4}$.
+    - Assim, a LKC no nó $N_{2}$ estabelece que $i_{5} = i_{1} + i_{3}$
 
-Por fim, em $ N_{4} $ entram as correntes $ i_{5} $ e $ i_{4} $ que somadas produzem $ i_{0} $ (que sai de $N_{4}$). Logo, $ i_{4} + i_{5} = i_{0} $, porém essa equação não será utilizada, pois, é uma combinação das outras três equações de nós obtidas até o momento. Agora, devemos passar ao passo 5 - escrever as equações das tensões nas malhas $M_{1}, M_{2} \text{ e } M_{3}$ com base na lei de kirchoff da tensão.
+Por fim, em $N_{4}$ entram as correntes $i_{5}$ e $i_{4}$ que somadas produzem $i_{0}$ (que sai de $N_{4}$). Logo, $i_{4} + i_{5} = i_{0}$, porém essa equação não será utilizada, pois, é uma combinação das outras três equações de nós obtidas até o momento. Agora, devemos passar ao passo 5 - escrever as equações das tensões nas malhas $M_{1}, M_{2} \text{ e } M_{3}$ com base na lei de kirchoff da tensão.
 
 </div>
 
@@ -621,7 +621,7 @@ Agora, devemos fazer as equações das tensões nas malhas pelos princípios da 
 3. **(ESSENCIAL)** Avalie os sinais da diferença de potencial do elemento no sentido escolhido para percorrer a malha. <!-- Em \( R \) no sentido horário a tensão vai do sentido positivo ao negativo, portanto, diminuindo. se fosse no sentido anti horário, a tensão no elemento iria do negativo para o positivo, portanto, aumentando -->
     1. Se no sentido escolhido a tensão diminuir — for do $+$ para o $-$ — então coloque a tensão deste elemento como negativa na equação da malha avaliada.
     2. Se no sentido escolhido a tensão aumentar — for do $-$ para o $+$ — então coloque a tensão deste elemento como positiva na equação da malha avaliada.
-- No nosso elemento atual $ R $ no sentido horário a tensão diminui. Portanto adicionamos a tensão negativa deste elemento na equação da malha $ M_{1} $. Assim:
+- No nosso elemento atual $R$ no sentido horário a tensão diminui. Portanto adicionamos a tensão negativa deste elemento na equação da malha $M_{1}$. Assim:
 
 $$ V_{M_{1}} = -R \cdot i_{2} + \cdots = 0 $$
 
@@ -648,13 +648,13 @@ $$ V_{M_{1}} = -R \cdot i_{2} + \cdots = 0 $$
 <div class="grid-50-50">
 <div class="grid-element small">
 
-4. Na equação $ V_{M_{1}} = -R \cdot i_{2} + \cdots = 0 $, as reticências ($ \cdots $) representam as tensões dos outros elementos que existem na malha mas que ainda não foram calculadas. Para continuar o algoritmo, escolha o próximo elemento não visitado no sentido escolhido para percorrer a malha como elemento atual.
+4. Na equação $V_{M_{1}} = -R \cdot i_{2} + \cdots = 0$, as reticências ($\cdots$) representam as tensões dos outros elementos que existem na malha mas que ainda não foram calculadas. Para continuar o algoritmo, escolha o próximo elemento não visitado no sentido escolhido para percorrer a malha como elemento atual.
 5. repita os passos 3 e 4 do subalgoritmo do passo 5 até que todos os elementos da malha tenham sido visitados.
 
-Aplicando o algoritmo para os próximos elementos a serem visitados $ R = 15 \Omega $ e a fonte de $ 350 V $ no resistor de $15 \Omega $ a tensão diminui, portanto:
+Aplicando o algoritmo para os próximos elementos a serem visitados $R = 15 \Omega$ e a fonte de $350 V$ no resistor de $15 \Omega$ a tensão diminui, portanto:
 $$ V_{M_{1}} = -R \cdot i_{2} - 15 \Omega \cdot i_{4} + \cdots = 0 $$
 
-Na fonte de $ 350 V $, o sentido escolhido faz a tensão aumentar (vai do do $-$ para o $+$). Portanto:
+Na fonte de $350 V$, o sentido escolhido faz a tensão aumentar (vai do do $-$ para o $+$). Portanto:
 
 $$ V_{M_{1}} = -R \cdot i_{2} - 15 \Omega \cdot i_{4} + 350 V = 0 $$
 
