@@ -6,7 +6,7 @@
 
 <div class="grid-element">
 
-Ao aplicar o passo 2, identificamos 4 nós $ N_{1}, N_{2}, N_{3} \text{ e } N_{4} $ (em verde escuro) no circuito.
+Ao aplicar o passo 2, identificamos 4 nós $N_{1}, N_{2}, N_{3} \text{ e } N_{4}$ (em verde escuro) no circuito.
 
 </div>
 
