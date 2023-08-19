@@ -829,7 +829,9 @@ $$
 
 ## Resolução do Circuito
 
-<div class="normal">
+<div class="grid-50-50">
+
+<div class="grid-element regular">
 
 Todas as correntes do circuito em função do resistor $R$ dadas pelo sympy são:
 
@@ -838,5 +840,231 @@ $$
 \left[\begin{matrix}1 & 0 & 0 & 0 & 0 & 0 & \frac{255 R + 4975}{53 R + 474}\\0 & 1 & 0 & 0 & 0 & 0 & \frac{255 R + 750}{53 R + 474}\\0 & 0 & 1 & 0 & 0 & 0 & \frac{4225}{53 R + 474}\\0 & 0 & 0 & 1 & 0 & 0 & \frac{2250 - 80 R}{53 R + 474}\\0 & 0 & 0 & 0 & 1 & 0 & \frac{80 R + 1975}{53 R + 474}\\0 & 0 & 0 & 0 & 0 & 1 & \frac{175 R + 3000}{53 R + 474}\end{matrix}\right]
 
 $$
+
+Sabemos que $i_{1} = {{255R + 750} \over {53R + 474}}$, sabemos também que $i_{1} = 3A$.
+
+Resolvendo esta equação igual à $3A$ no sympy, obtemos $R = 7 \Omega$.
+
+</div>
+
+<div class="grid-element regular">
+
+Substituindo $R$ por $7 \Omega$ em todas as outras equações de corrente obtemos:
+
+$$
+\begin{align}
+    i_{0} = 8A \\
+    i_{1} = 3A \\
+    i_{2} = 5A \\
+    i_{3} = 2A \\
+    i_{4} = 3A \\
+    i_{5} = 5A \\
+\end{align}
+$$
+
+Portanto, agora o circuito está resolvido, pois, é possível calcular todas as grandezas elétricas associadas a seus elementos.
+
+</div>
+
+</div>
+
+
+---
+
+<!-- _class: lead -->
+# Instrumentos Para Medição de Grandezas Elétricas
+
+
+---
+
+## Instrumentos de Medida - Voltímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O voltímetro é um instumento que mede as tensões (diferenças de potencial) que existem entre dois pontos quaisquer em um circuito elétrico;
+- Em um circuito, o voltímetro deve sempre ser ligado em paralelo ao elemento cuja tensão desejamos medir;
+
+<!-- _class: transparent -->
+![](./img/voltimetro_paralelo.png)
+
+- O voltímetro ideal não causa nenhuma alteração no circuito, por possuir resistência infinita;
+- O voltímetro real não apresenta resistência infinita, apenas uma resistência muito grande, destarte, causa pequenas alterações no circuito;
+- O voltímetro apresenta limites de tensões que consegue ler, temos de levar isso em consideração.
+
+</div>
+
+<div class="grid-element regular">
+
+<!-- _class: transparent -->
+![](./img/voltimetro.png)
+Exemplo de voltímetro analógico para tensões contínuas.
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Amperímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O amperímetro é um instumento que mede a corrente que passa em um elemento de um circuito elétrico;
+- Em um circuito, o amperímetro deve sempre ser ligado em série ao elemento cuja corrente desejamos medir;
+
+<!-- _class: transparent -->
+![](./img/amperimetro_serie.png)
+
+- O amperímetro ideal tem reistência nula;
+- O amperímetro real não apresenta resistência nula, apenas uma resistência muito pequena, destarte, por si só causa pequenas alterações nas correntes que lê.
+- Devemos nos atentar aos limites operacionais do instrumento;
+
+</div>
+
+<div class="grid-element regular">
+
+<!-- _class: transparent -->
+![](./img/amperimetro.png)
+Exemplo de amperímetro analógico.
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Ohmímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O ohmímetro é um instumento que mede a resistência de um elemento em um circuito elétrico;
+- Em um circuito, o ohmímetro deve sempre ser ligado aos terminais do elemento cuja resistência desejamos medir;
+- O circuito deve estar desenergizado para que a medida da resistência seja correta;
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/ohmimetro_paralelo.png)
+
+</center>
+
+</div>
+
+<div class="grid-element regular">
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/ohmimetro.png)
+Exemplo de ohmímetro analógico.
+
+</center>
+
+- O ohmímetro é um elemento que dispõe de uma fonte de tensão estável $V$, que ao se conectar aos terminais de um elemento (resistor) faz circular uma corrente elétrica por ele.
+- Essa corrente elétrica $I$ é medida pelo instrumento e pela lei de Ohm, ele nos mostra a resistência calculada pela equação $R = {V \over I}$.
+- Devemos nos atentar aos limites operacionais do instrumento;
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Multímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O multímetro é um instumento que mede as três grandezas elétricas principais $- V, R, I -$, como também capacitância, indutância e continuidade de circuitos;
+- Funciona através de pontas de prova e chaves seletoras das grandezas (e suas escalas);
+- Está disponível em múltiplos preços, variando de R$ 16,00 a 2,5 salários mínimos.
+- É necessário se ater a seus limites operacionais;
+- Funciona da mesma forma que os outros três instrumentos e deve ser aplicado aos circuitos de acordo com o esperado para a grandeza a se medir;
+    - Exemplo: em série ao elemento, se a grandeza medida for corrente, em paralelo se for tensão e em paralelo com o circuito desenergizado se for resistência;
+- Disponíveis nos nossos laboratórios, serão usados na questão experimental da atividade avaliativa 1;
+
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/multimetro_paralelo.png)
+
+</center>
+
+</div>
+
+<div class="grid-element regular">
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/multimetro.png)
+Exemplo de multímetro digital.
+
+</center>
+
+</div>
+
+</div>
+
+
+---
+
+## Desafio
+
+Os sete primeiros estudantes que entregarem a matriz do sistema linear das correntes do circuito de exemplo dessa aula em sua forma escada pelo método de gauss, demonstrando cada operação de combinação linear entre as linhas da matriz para sua transformação na sua forma escada e em formato LATEX ganharão dois pontos extras.
+
+A forma escada difere da forma escada reduzida por linhas porque na última, todos os elementos acima e abaixo do elemento $A_{ii}$ são zero. Na forma escada, apenas os elementos abaixo de $A_{ii}$ são nulos.
+
+
+---
+
+## Lista 3 de Exercícios
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+Problemas 2.18 ao 2.24 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
+
+### Respostas dos Exercícios Pares (para conferência)
+
+2.18
+- a) $i_{a} = 2A, i_{b} = 0.5A, i_{g} = 2.5A$
+- os questões subsequentes derivam das respostas da a)
+
+2.20
+- a) $v_{o} = 16V, i_{0} = 8 mA$
+- b) $i_{g} = 10 mA$
+- c) $P = 160mW$
+
+2.22
+
+- a) $R = 7 \Omega$
+- b) $P = 1 kW$
+
+</div>
+
+<div class="grid-element regular">
+
+2.24
+
+- a) $i_{cd} = 33.33mA, i_{ab} = i_{bd} = 66.67mA, i_{bc} = 0$
+    $P_{5k\Omega} = 22.22W, P_{7.5k\Omega} = 33.33W$, 
+    $P_{10k\Omega} = 11.11W, P_{15k\Omega} = 16.67W, P_{4k\Omega} = 0$
+- b) A queda de tensão na fonte de corrente é de $833.33 V$ e a potência do circuito é de $83.33W$
+- c) $83.33W$
+
+</div>
 
 </div>
