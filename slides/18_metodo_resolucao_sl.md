@@ -1,13 +1,12 @@
-## Algoritmo (passo-a-passo) 
-
+## Algoritmo para resolução de circuitos pela lei de Kirchhoff (passo-a-passo) 
 <div class="normal">
 
-5. Escreva as diferenças de potencial existentes em uma malha levando em consideração a lei de kirchoff da tensão, que estabelece que a soma das diferenças de potencial dos elementos de uma malha é igual a zero.
-    - Aqui a sinalização dos pontos onde ocorrem quedas de pontecial nos resistores será essencial, pois:
-        - Se em um ponto da malha, o caminho da malha se mover de um ponto de menor tensão (-) para um ponto de maior tensão (+) em um resistor, você deve considerar um aumento de tensão nesse caminho. 
-        - Se o caminho se mover de um ponto de maior tensão para um ponto de menor tensão, você deve considerar um decréscimo de tensão no caminho da malha.
-6. A partir das equações de corrente obtidas em 4 e 5, se você seguiu o método corretamente, você produziu um modelo matemático adequado para o comportamento de circuito e ele pode ser resolvido através de sistemas lineares. 
+Dado um circuito qualquer:
 
-**Lembrando: Não adianta sua matemática estar correta se seu modelo estiver errado!**
+1. Determine quais são os elementos (resistores e fontes) do circuito;
+2. Determine quais são os nós do circuito (ponto onde dois ou mais elementos se juntam);
+3. Determine quais são as malhas (Caminhos (laços) cujos nó inicial e final se coincidem sem englobar nenhum outro laço) do circuito;
+4. Levando em conta a lei de Kirchhoff da corrente, que afirma que a soma das correntes entrando em um nó é igual àquelas que saem, identifique as correntes dos elementos do circuito, onde ocorrem quedas ou aumentos de tensão e o comportamento das correntes nos nós;
+    - **ESSENCIAL:** Nos resistores, assinale um sinal positivo no ponto onde a corrente entra (maior tensão) e um negativo onde ela sai (menor tensão). Por fim, assinale os sinais positivos e negativos aos respectivos polos da(s) fonte(s). 
 
 </div>

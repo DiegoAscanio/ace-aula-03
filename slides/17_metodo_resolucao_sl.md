@@ -1,15 +1,20 @@
+## Método para determinação do sentido das correntes e das equações de malha para a obtenção de equações lineares que resolvem um circuito resistivo.
 
+<div class="grid-50-50">
 
-## Algoritmo (passo-a-passo) 
+<div class="grid-element normal">
 
-<div class="normal">
+- Como resolver o circuito ao lado, em função de $R$ e depois, descobrir o valor de $R$ sabendo que uma corrente de $3A$ passa pelo resistor de $9\Omega$?
 
-Dado um circuito qualquer:
+- Através do Algoritmo explicado nos próximos slides!
 
-1. Determine quais são os elementos (resistores e fontes) do circuito;
-2. Determine quais são os nós do circuito (ponto onde dois ou mais elementos se juntam);
-3. Determine quais são as malhas (Caminhos (laços) cujos nó inicial e final se coincidem sem englobar nenhum outro laço) do circuito;
-4. Levando em conta a lei de Kirchhoff da corrente, que afirma que a soma das correntes entrando em um nó é igual àquelas que saem, identifique as correntes dos elementos do circuito e onde ocorrem quedas ou aumentos de tensão. 
-    - **ESSENCIAL:** Nos resistores, assinale um sinal positivo no ponto onde a corrente entra (maior tensão) e um negativo onde ela sai (menor tensão). Por fim, assinale os sinais positivos e negativos aos respectivos polos da(s) fonte(s). 
+</div>
+
+<div class="grid-element">
+
+<!-- _class: transparent -->
+![](./img/circuito_sem_anotacoes.png)
+
+</div>
 
 </div>

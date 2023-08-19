@@ -4,24 +4,24 @@
 ### Passo 5
 
 <div class="grid-50-50">
+
 <div class="grid-element small">
 
-4. Na equação $V_{M_{1}} = -R \cdot i_{2} + \cdots = 0$, as reticências ($\cdots$) representam as tensões dos outros elementos que existem na malha mas que ainda não foram calculadas. Para continuar o algoritmo, escolha o próximo elemento não visitado no sentido escolhido para percorrer a malha como elemento atual.
-5. repita os passos 3 e 4 do subalgoritmo do passo 5 até que todos os elementos da malha tenham sido visitados.
+3. **(ESSENCIAL)** Avalie os sinais da diferença de potencial do elemento no sentido escolhido para percorrer a malha. <!-- Em \( R \) no sentido horário a tensão vai do sentido positivo ao negativo, portanto, diminuindo. se fosse no sentido anti horário, a tensão no elemento iria do negativo para o positivo, portanto, aumentando -->
+    1. Se no sentido escolhido a tensão diminuir — for do $+$ para o $-$ — então coloque a tensão deste elemento como negativa na equação da malha avaliada.
+    2. Se no sentido escolhido a tensão aumentar — for do $-$ para o $+$ — então coloque a tensão deste elemento como positiva na equação da malha avaliada.
+- No nosso elemento atual $R$ no sentido horário a tensão diminui. Portanto adicionamos a tensão negativa deste elemento na equação da malha $M_{1}$. Assim:
 
-Aplicando o algoritmo para os próximos elementos a serem visitados $R = 15 \Omega$ e a fonte de $350 V$ no resistor de $15 \Omega$ a tensão diminui, portanto:
-$$ V_{M_{1}} = -R \cdot i_{2} - 15 \Omega \cdot i_{4} + \cdots = 0 $$
-
-Na fonte de $350 V$, o sentido escolhido faz a tensão aumentar (vai do do $-$ para o $+$). Portanto:
-
-$$ V_{M_{1}} = -R \cdot i_{2} - 15 \Omega \cdot i_{4} + 350 V = 0 $$
+$$ V_{M_{1}} = -R \cdot i_{2} + \cdots = 0 $$
 
 </div>
+
 <div class="grid-element">
 
 <!-- _class: transparent -->
 ![grid-img](./img/circuito_final.png)
 
 </div>
+
 </div>
 

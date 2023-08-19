@@ -49,7 +49,8 @@
 <hr />
 <h2>Algoritmo</h2>
 <h3>Passo 1</h3>
-<p>Considerando o circuito da figura abaixo, queremos resolvê-lo calculando o valor de todas as correntes de seus componentes em função do resistor de valor desconhecido \(R\). Ao aplicar o passo 1 do algoritmo, os resistores identificados encontram-se contornados por linhas vermelhas e a fonte identificada por uma linha laranja:</p>
+<p>Considerando o circuito da figura abaixo, queremos resolvê-lo calculando o valor de todas as correntes de seus componentes em função do resistor de valor desconhecido \(R\). <strong>Para resolver o circuito ao final do algoritmo, bem como encontrar o valor de \(R\), sabemos que no resistor de \(30 \Omega\) passa uma corrente de \(1A\).</strong></p>
+<p>Ao aplicar o passo 1 do algoritmo, os resistores identificados encontram-se contornados por linhas vermelhas e a fonte identificada por uma linha laranja:</p>
 <p><img src="./img/circuito_original.png" alt="Circuito Original" /></p>
 <hr />
 <h2>Algoritmo</h2>
@@ -165,3 +166,45 @@ V_{M_{3}} &amp;= -10 i_{5} - 10 i_{5} + 15 i_{4} - 15 i_{3} = 0 \\
 <p><img src="./img/circuito_final.png" alt="grid-img" /></p>
 </div>
 </div>
+<hr />
+<h2>Algoritmo</h2>
+<h2>Passo 6</h2>
+<p>Tendo obtido equações dos elementos dos circuitos através da LKC e da LKC, obtemos:</p>
+<p>\[
+\begin{align}
+&amp;i_{0} = i_{1} + i_{2} \\
+&amp;i_{2} = i_{3} + i_{4} \\
+&amp;i_{5} = i_{1} + i_{3} \\
+&amp;-R \cdot i_{2} - 15 \Omega \cdot i_{4} + 350V = 0 \\
+&amp;-30 i_{1} - 20 i_{1} + 15 i_{3} + R i_{2} = 0 \\
+&amp;-10 i_{5} - 10 i_{5} + 15 i_{4} - 15 i_{3} = 0
+\end{align}
+\]</p>
+<hr />
+<h2>Algoritmo</h2>
+<h2>Passo 6</h2>
+<p>Reorganizando as equações do circuito para construir um sistema linear terminamos o algoritmo de modelagem.</p>
+<p>\[
+\begin{cases}
+&amp;1 i_{0} - 1 i_{1} - 1 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &amp;= 0\\
+&amp;0 i_{0} + 0 i_{1} + 1 i_{2} - 1 i_{3} - 1 i_{4} + 0 i_{5} &amp;= 0\\
+&amp;0 i_{0} - 1 i_{1} + 0 i_{2} - 1 i_{3} + 0 i_{4} + 1 i_{5} &amp;= 0\\
+&amp;0 i_{0} + 0 i_{1} - R i_{2} + 0 i_{3} - 15 i_{4} + 0 i_{5} &amp;= -350\\
+&amp;0 i_{0} - 50 i_{1} + R i_{2} + 15 i_{3} + 0 i_{4} + 0 i_{5} &amp;= 0\\
+&amp;0 i_{0} + 0 i_{1} + 0 i_{2} - 15 i_{3} + 15 i_{4} - 20 i_{5} &amp;= 0\\
+\end{cases}
+\]</p>
+<hr />
+<h2>Resolução do Circuito</h2>
+<p>Agora, devemos reescrever o sistema em sua representação matricial e usar um sistema computacional de álgebra linear simbólica (sympy do python) para nos auxiliar a resolver esse circuito e encontrar as correntes em função do resistor \(R\) desconhecido:</p>
+<p>\[
+\begin{bmatrix}
+1 &amp; -1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; -1 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; -R &amp; 0 &amp; -15 &amp; 0 &amp; -350\\
+0 &amp; -50 &amp; R &amp; 15 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -15 &amp; 15 &amp; -20 &amp; 0
+\end{bmatrix}
+\]</p>
+<hr />

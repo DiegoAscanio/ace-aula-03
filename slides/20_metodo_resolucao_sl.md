@@ -1,19 +1,21 @@
 ## Algoritmo
 
-### Passo 2
+### Passo 1
 
 <div class="grid-50-50">
 
-<div class="grid-element">
+<div class="grid-element normal">
 
-Ao aplicar o passo 2, identificamos 4 nós $N_{1}, N_{2}, N_{3} \text{ e } N_{4}$ (em verde escuro) no circuito.
+Considerando o circuito da figura, queremos resolvê-lo calculando o valor de todas as correntes de seus componentes em função do resistor de valor desconhecido $R$. **Para resolver o circuito ao final do algoritmo, bem como encontrar o valor de $R$, sabemos que no resistor de $9 \Omega$ passa uma corrente de $3A$.**
+
+Ao aplicar o passo 1 do algoritmo, os resistores identificados encontram-se contornados por linhas vermelhas e a fonte identificada por uma linha laranja:
 
 </div>
 
 <div class="grid-element">
 
 <!-- _class: transparent -->
-![Identificação dos Nós](./img/circuito_nos_identificados.png)
+![Circuito Original](./img/circuito_original.png)
 
 </div>
 

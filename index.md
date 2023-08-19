@@ -399,10 +399,31 @@ Consideramos que um circuito está resolvido quando sabemos todos os valores de 
 
 ---
 
+## Método para determinação do sentido das correntes e das equações de malha para a obtenção de equações lineares que resolvem um circuito resistivo.
+
+<div class="grid-50-50">
+
+<div class="grid-element normal">
+
+- Como resolver o circuito ao lado, em função de $R$ e depois, descobrir o valor de $R$ sabendo que uma corrente de $3A$ passa pelo resistor de $9\Omega$?
+
+- Através do Algoritmo explicado nos próximos slides!
+
+</div>
+
+<div class="grid-element">
+
+<!-- _class: transparent -->
+![](./img/circuito_sem_anotacoes.png)
+
+</div>
+
+</div>
 
 
-## Algoritmo (passo-a-passo) 
+---
 
+## Algoritmo para resolução de circuitos pela lei de Kirchhoff (passo-a-passo) 
 <div class="normal">
 
 Dado um circuito qualquer:
@@ -410,7 +431,7 @@ Dado um circuito qualquer:
 1. Determine quais são os elementos (resistores e fontes) do circuito;
 2. Determine quais são os nós do circuito (ponto onde dois ou mais elementos se juntam);
 3. Determine quais são as malhas (Caminhos (laços) cujos nó inicial e final se coincidem sem englobar nenhum outro laço) do circuito;
-4. Levando em conta a lei de Kirchhoff da corrente, que afirma que a soma das correntes entrando em um nó é igual àquelas que saem, identifique as correntes dos elementos do circuito e onde ocorrem quedas ou aumentos de tensão. 
+4. Levando em conta a lei de Kirchhoff da corrente, que afirma que a soma das correntes entrando em um nó é igual àquelas que saem, identifique as correntes dos elementos do circuito, onde ocorrem quedas ou aumentos de tensão e o comportamento das correntes nos nós;
     - **ESSENCIAL:** Nos resistores, assinale um sinal positivo no ponto onde a corrente entra (maior tensão) e um negativo onde ela sai (menor tensão). Por fim, assinale os sinais positivos e negativos aos respectivos polos da(s) fonte(s). 
 
 </div>
@@ -418,8 +439,7 @@ Dado um circuito qualquer:
 
 ---
 
-## Algoritmo (passo-a-passo) 
-
+## Algoritmo para resolução de circuitos pela lei de Kirchhoff (passo-a-passo) 
 <div class="normal">
 
 5. Escreva as diferenças de potencial existentes em uma malha levando em consideração a lei de kirchoff da tensão, que estabelece que a soma das diferenças de potencial dos elementos de uma malha é igual a zero.
@@ -443,7 +463,9 @@ Dado um circuito qualquer:
 
 <div class="grid-element normal">
 
-Considerando o circuito da figura, queremos resolvê-lo calculando o valor de todas as correntes de seus componentes em função do resistor de valor desconhecido $R$. Ao aplicar o passo 1 do algoritmo, os resistores identificados encontram-se contornados por linhas vermelhas e a fonte identificada por uma linha laranja:
+Considerando o circuito da figura, queremos resolvê-lo calculando o valor de todas as correntes de seus componentes em função do resistor de valor desconhecido $R$. **Para resolver o circuito ao final do algoritmo, bem como encontrar o valor de $R$, sabemos que no resistor de $9 \Omega$ passa uma corrente de $3A$.**
+
+Ao aplicar o passo 1 do algoritmo, os resistores identificados encontram-se contornados por linhas vermelhas e a fonte identificada por uma linha laranja:
 
 </div>
 
@@ -522,9 +544,9 @@ Ao aplicar o passo 3, identificamos 3 Malhas $M_{1}, M_{2} \text{ e } M_{3}$ (em
 Levando em conta a lei de Kirchhoff da corrente, que afirma que a soma das correntes entrando em um nó é igual àquelas que saem, identifique as correntes dos elementos do circuito e onde ocorrem quedas ou aumentos de tensão. 
 - **ESSENCIAL:** Nos resistores, assinale um sinal positivo no ponto onde a corrente entra (maior tensão) e um negativo onde ela sai (menor tensão). Por fim, assinale os sinais positivos e negativos aos respectivos polos da(s) fonte(s). 
 
-Cada elemento no circuito tem uma corrente que passa por ele. Começando pela fonte do circuito, temos uma corrente $i_{0}$ que flui do polo negativo da fonte em direção ao polo positivo. A corrente $i_{0}$ entra no nó $N_{1}$ e nesse nó ocorre uma ramificação do circuito para duas resistências: a resistência de valor indeterminado $R$ e a resistência de $30 \Omega$. 
+Cada elemento no circuito tem uma corrente que passa por ele. Começando pela fonte do circuito, temos uma corrente $i_{0}$ que flui do polo negativo da fonte em direção ao polo positivo. A corrente $i_{0}$ entra no nó $N_{1}$ e nesse nó ocorre uma ramificação do circuito para duas resistências: a resistência de valor indeterminado $R$ e a resistência de $9 \Omega$. 
 
-Considerando a corrente que flui pelo resistor de $30 \Omega$ como $i_{1}$ e a corrente que flui por $R$ como $i_{2}$, como ambas $i_{1} \text{ e } i_{2}$ saem do nó $N_{1}$ e existe uma corrente $i_{0}$ que chega a este nó assim, pela LKC:
+Considerando a corrente que flui pelo resistor de $9 \Omega$ como $i_{1}$ e a corrente que flui por $R$ como $i_{2}$, como ambas $i_{1} \text{ e } i_{2}$ saem do nó $N_{1}$ e existe uma corrente $i_{0}$ que chega a este nó assim, pela LKC:
 
 <div class="normal">
 
@@ -556,10 +578,10 @@ $$ i_{0} = i_{1} + i_{2} $$
 
 <div class="grid-element footnotesize" >
 
-Continuando a análise do circuito, verificamos que entre os nós $N_{1}$ e $N_{2}$ os resistores de $30 \Omega$ e de $20 \Omega$ estão em série, e portanto, possuem a mesma corrente $i_{1}$. Verificamos também que um resistor de $15 \Omega$ conecta os nós $N_{2}$ e $N_{3}$, existindo assim, uma corrente que circula neste elemento. O sentido de circulação da corrente deve ser definido arbitrariamente (a seu critério) e você pode definir tanto uma corrente $i_{3}$ que flui de $N_{2}$ para $N_{3}$ (direita para a esquerda) quanto de $N_{3}$ para $N_{2}$ (esquerda para a direita).
+Continuando a análise do circuito, verificamos que entre os nós $N_{1}$ e $N_{2}$ os resistores de $9 \Omega$ e de $6 \Omega$ estão em série, e portanto, possuem a mesma corrente $i_{1}$. Verificamos também que um resistor de $5 \Omega$ conecta os nós $N_{2}$ e $N_{3}$, existindo assim, uma corrente que circula neste elemento. O sentido de circulação da corrente deve ser definido arbitrariamente (a seu critério) e você pode definir tanto uma corrente $i_{3}$ que flui de $N_{2}$ para $N_{3}$ (direita para a esquerda) quanto de $N_{3}$ para $N_{2}$ (esquerda para a direita).
 
 Nessa resolução, arbitraremos que a corrente $i_{3}$ flui de $N_{3}$ para $N_{2}$. Agora, escreveremos as equações da lei de Kirchhoff para a corrente para os nós $N_{3}$ e $N_{2}$ respectivamente. 
-- No nó $N_{3}$ chega a corrente corrente $i_{2}$ que se divide para as correntes $i_{3}$ — que flui de $N_{3}$ para $N_{2}$ — e $i_{4}$ que passa no resistor de $15 \Omega$ entre $N_{3}$ e $N_{4}$.
+- No nó $N_{3}$ chega a corrente corrente $i_{2}$ que se divide para as correntes $i_{3}$ — que flui de $N_{3}$ para $N_{2}$ — e $i_{4}$ que passa no resistor de $30 \Omega$ entre $N_{3}$ e $N_{4}$.
     - Assim, a LKC no nó $N_{3}$ estabelece que $i_{2} = i_{3} + i_{4}$.
 - No nó $N_{2}$ chegam as correntes $i_{1}$ e $i_{3}$ e sai uma corrente $i_{5}$ em direção aos dois resistores em série de $10 \Omega$ entre $N_{2}$ e $N_{4}$.
     - Assim, a LKC no nó $N_{2}$ estabelece que $i_{5} = i_{1} + i_{3}$
@@ -651,12 +673,12 @@ $$ V_{M_{1}} = -R \cdot i_{2} + \cdots = 0 $$
 4. Na equação $V_{M_{1}} = -R \cdot i_{2} + \cdots = 0$, as reticências ($\cdots$) representam as tensões dos outros elementos que existem na malha mas que ainda não foram calculadas. Para continuar o algoritmo, escolha o próximo elemento não visitado no sentido escolhido para percorrer a malha como elemento atual.
 5. repita os passos 3 e 4 do subalgoritmo do passo 5 até que todos os elementos da malha tenham sido visitados.
 
-Aplicando o algoritmo para os próximos elementos a serem visitados $R = 15 \Omega$ e a fonte de $350 V$ no resistor de $15 \Omega$ a tensão diminui, portanto:
-$$ V_{M_{1}} = -R \cdot i_{2} - 15 \Omega \cdot i_{4} + \cdots = 0 $$
+Aplicando o algoritmo para os próximos elementos a serem visitados $R = 30 \Omega$ e a fonte de $125 V$, no resistor de $30 \Omega$ a tensão diminui, portanto:
+$$ V_{M_{1}} = -R \cdot i_{2} - 30 \Omega \cdot i_{4} + \cdots = 0 $$
 
-Na fonte de $350 V$, o sentido escolhido faz a tensão aumentar (vai do do $-$ para o $+$). Portanto:
+Na fonte de $125 V$, o sentido escolhido faz a tensão aumentar (vai do do $-$ para o $+$). Portanto:
 
-$$ V_{M_{1}} = -R \cdot i_{2} - 15 \Omega \cdot i_{4} + 350 V = 0 $$
+$$ V_{M_{1}} = -R \cdot i_{2} - 30 \Omega \cdot i_{4} + 125 V = 0 $$
 
 </div>
 <div class="grid-element">
@@ -684,8 +706,8 @@ Aplicando o passo 5 para as próximas malhas no sentido horário temos que:
 
 $$ 
 \begin{align}
-    V_{M_{2}} &= -30 i_{1} - 20 i_{1} + 15 i_{3} + R i_{2} = 0 \\
-    V_{M_{3}} &= -10 i_{5} - 10 i_{5} + 15 i_{4} - 15 i_{3} = 0 \\
+    V_{M_{2}} &= -9 i_{1} - 6 i_{1} + 5 i_{3} + R i_{2} = 0 \\
+    V_{M_{3}} &= -10 i_{5} - 6 i_{5} + 30 i_{4} - 5 i_{3} = 0 \\
 \end{align}
 $$
 
@@ -696,4 +718,118 @@ $$
 ![grid-img](./img/circuito_final.png)
 
 </div>
+</div>
+
+
+---
+
+## Algoritmo
+
+## Passo 6
+
+Tendo obtido equações dos elementos dos circuitos através da LKC e da LKC, obtemos:
+
+$$
+\begin{align}
+    &i_{0} = i_{1} + i_{2} \\
+    &i_{2} = i_{3} + i_{4} \\
+    &i_{5} = i_{1} + i_{3} \\
+    &-R \cdot i_{2} - 30 \Omega \cdot i_{4} + 125V = 0 \\
+    &-9 i_{1} - 6 i_{1} + 5 i_{3} + R i_{2} = 0 \\
+    &-10 i_{5} - 6 i_{5} + 30 i_{4} - 5 i_{3} = 0
+\end{align}
+$$
+
+
+---
+
+## Algoritmo
+
+## Passo 6
+
+Reorganizando as equações do circuito para construir um sistema linear terminamos o algoritmo de modelagem.
+
+$$
+\begin{cases}
+    &1 i_{0} - 1 i_{1} - 1 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 i_{0} + 0 i_{1} + 1 i_{2} - 1 i_{3} - 1 i_{4} + 0 i_{5} &= 0\\
+    &0 i_{0} - 1 i_{1} + 0 i_{2} - 1 i_{3} + 0 i_{4} + 1 i_{5} &= 0\\
+    &0 i_{0} + 0 i_{1} - R i_{2} + 0 i_{3} - 30 i_{4} + 0 i_{5} &= -125\\
+    &0 i_{0} - 15 i_{1} + R i_{2} + 5 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 i_{0} + 0 i_{1} + 0 i_{2} - 5 i_{3} + 30 i_{4} - 16 i_{5} &= 0\\
+\end{cases}
+$$
+
+
+---
+
+## Resolução do Circuito
+
+Agora, devemos reescrever o sistema em sua representação matricial e usar um sistema computacional de álgebra linear simbólica (sympy do python) para nos auxiliar a resolver esse circuito e encontrar as correntes em função do resistor $R$ desconhecido:
+
+$$
+\begin{bmatrix}
+    1 & -1 & -1 & 0 & 0 & 0 \\
+    0 & 0 & 1 & -1 & -1 & 0 \\
+    0 & -1 & 0 & -1 & 0 & 1 \\
+    0 & 0 & -R & 0 & -30 & 0 \\
+    0 & -15 & R & 5 & 0 & 0 \\
+    0 & 0 & 0 & -5 & 30 & -16 \\
+\end{bmatrix}
+\begin{bmatrix}
+    i_{0} \\
+    i_{1} \\
+    i_{2} \\
+    i_{3} \\
+    i_{4} \\
+    i_{5} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    0 \\
+    0 \\
+    0 \\
+    -125 \\
+    0 \\
+    0 \\
+\end{bmatrix}
+$$
+
+
+---
+
+## Resolução do Circuito
+
+<div class="normal">
+
+Para resolver o circuito no sympy construímos uma matriz extendida composta pela matriz $A$ de coeficientes do sistema acrescida da matriz $B$ de termos independentes dele (o lado direito das equações do sistema).
+
+$$
+\begin{bmatrix}
+    1 & -1 & -1 & 0 & 0 & 0 & 0\\
+    0 & 0 & 1 & -1 & -1 & 0 & 0\\
+    0 & -1 & 0 & -1 & 0 & 1 & 0\\
+    0 & 0 & -R & 0 & -30 & 0 & -125\\
+    0 & -15 & R & 5 & 0 & 0 & 0\\
+    0 & 0 & 0 & -5 & 30 & -16 & 0\\
+\end{bmatrix}
+$$
+
+</div>
+
+
+---
+
+## Resolução do Circuito
+
+<div class="normal">
+
+Todas as correntes do circuito em função do resistor $R$ dadas pelo sympy são:
+
+$$
+
+\left[\begin{matrix}1 & 0 & 0 & 0 & 0 & 0 & \frac{255 R + 4975}{53 R + 474}\\0 & 1 & 0 & 0 & 0 & 0 & \frac{255 R + 750}{53 R + 474}\\0 & 0 & 1 & 0 & 0 & 0 & \frac{4225}{53 R + 474}\\0 & 0 & 0 & 1 & 0 & 0 & \frac{2250 - 80 R}{53 R + 474}\\0 & 0 & 0 & 0 & 1 & 0 & \frac{80 R + 1975}{53 R + 474}\\0 & 0 & 0 & 0 & 0 & 1 & \frac{175 R + 3000}{53 R + 474}\end{matrix}\right]
+
+$$
+
 </div>

@@ -1,21 +1,19 @@
- 
-
 ## Algoritmo
 
-### Passo 3
+### Passo 2
 
 <div class="grid-50-50">
 
 <div class="grid-element">
 
-Ao aplicar o passo 3, identificamos 3 Malhas $M_{1}, M_{2} \text{ e } M_{3}$ (em azul) no circuito.
+Ao aplicar o passo 2, identificamos 4 nós $N_{1}, N_{2}, N_{3} \text{ e } N_{4}$ (em verde escuro) no circuito.
 
 </div>
 
 <div class="grid-element">
 
 <!-- _class: transparent -->
-![Identificação das Malhas](./img/circuito_malhas_identificadas.png)
+![Identificação dos Nós](./img/circuito_nos_identificados.png)
 
 </div>
 

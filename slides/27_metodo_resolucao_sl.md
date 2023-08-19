@@ -1,20 +1,20 @@
 
-
-<div class="grid-50-50">
-<div class="grid-element normal">
-
 ## Algoritmo
 
 ### Passo 5
 
-Aplicando o passo 5 para as próximas malhas no sentido horário temos que:
+<div class="grid-50-50">
+<div class="grid-element small">
 
-$$ 
-\begin{align}
-    V_{M_{2}} &= -30 i_{1} - 20 i_{1} + 15 i_{3} + R i_{2} = 0 \\
-    V_{M_{3}} &= -10 i_{5} - 10 i_{5} + 15 i_{4} - 15 i_{3} = 0 \\
-\end{align}
-$$
+4. Na equação $V_{M_{1}} = -R \cdot i_{2} + \cdots = 0$, as reticências ($\cdots$) representam as tensões dos outros elementos que existem na malha mas que ainda não foram calculadas. Para continuar o algoritmo, escolha o próximo elemento não visitado no sentido escolhido para percorrer a malha como elemento atual.
+5. repita os passos 3 e 4 do subalgoritmo do passo 5 até que todos os elementos da malha tenham sido visitados.
+
+Aplicando o algoritmo para os próximos elementos a serem visitados $R = 30 \Omega$ e a fonte de $125 V$, no resistor de $30 \Omega$ a tensão diminui, portanto:
+$$ V_{M_{1}} = -R \cdot i_{2} - 30 \Omega \cdot i_{4} + \cdots = 0 $$
+
+Na fonte de $125 V$, o sentido escolhido faz a tensão aumentar (vai do do $-$ para o $+$). Portanto:
+
+$$ V_{M_{1}} = -R \cdot i_{2} - 30 \Omega \cdot i_{4} + 125 V = 0 $$
 
 </div>
 <div class="grid-element">
@@ -24,3 +24,4 @@ $$
 
 </div>
 </div>
+
