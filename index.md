@@ -116,6 +116,13 @@
     grid-template-columns: 1fr 1fr;
     text-align: justify;
   }
+
+  .grid-66-33 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    text-align: justify;
+  }
+
   .grid-element {
     margin-left: 5%;
     margin-right: 5%;
@@ -131,11 +138,11 @@
 
 
 # Análise de Circuitos Elétricos
-## Aula 03 - Leis de Kirchoff e Instrumentos Para Medição de Grandezas
+## Aula 03 - Leis de Kirchoff, Resolução de Circuitos Pelas Leis de Kirchoff e Instrumentos Para Medição de Grandezas
  
 Prof. M.Sc. Diego Ascânio Santos (ascanio@cefetmg.br)
 
-Aula baseada sobre o material do professor Dr. Emerson Gonçalves de Melo (emerdemelo@usp.br - DEMAR EEL USP), da professora Dra. Thabatta Moreira Alves de Araújo (thabatta@cefetmg.br - DIGDDV) e da Khan Academy.
+Aula baseada sobre o material do professor Dr. Emerson Gonçalves de Melo (emerdemelo@usp.br - DEMAR EEL USP), da professora Dra. Thabatta Moreira Alves de Araújo (thabatta@cefetmg.br - DIGDDV), da Khan Academy e do professor Dr. Thomas G. Cleaver (tom.cleaver@louisville.edu) da universidade de Louisville.
 
 CEFET-MG DIGGDDV - Divinópolis, 2023.
 
@@ -446,7 +453,8 @@ Dado um circuito qualquer:
     - Aqui a sinalização dos pontos onde ocorrem quedas de pontecial nos resistores será essencial, pois:
         - Se em um ponto da malha, o caminho da malha se mover de um ponto de menor tensão (-) para um ponto de maior tensão (+) em um resistor, você deve considerar um aumento de tensão nesse caminho. 
         - Se o caminho se mover de um ponto de maior tensão para um ponto de menor tensão, você deve considerar um decréscimo de tensão no caminho da malha.
-6. A partir das equações de corrente obtidas em 4 e 5, se você seguiu o método corretamente, você produziu um modelo matemático adequado para o comportamento de circuito e ele pode ser resolvido através de sistemas lineares. 
+6. Escreva equações da lei de Ohm (V = Ri) para cada resistor do circuito.
+7. A partir das equações de corrente obtidas em 4, 5 e 6, se você seguiu o método corretamente, você produziu um modelo matemático adequado para o comportamento de circuito e ele pode ser resolvido através de sistemas lineares. 
 
 **Lembrando: Não adianta sua matemática estar correta se seu modelo estiver errado!**
 
@@ -586,7 +594,7 @@ Nessa resolução, arbitraremos que a corrente $i_{3}$ flui de $N_{3}$ para $N_{
 - No nó $N_{2}$ chegam as correntes $i_{1}$ e $i_{3}$ e sai uma corrente $i_{5}$ em direção aos dois resistores em série de $10 \Omega$ entre $N_{2}$ e $N_{4}$.
     - Assim, a LKC no nó $N_{2}$ estabelece que $i_{5} = i_{1} + i_{3}$
 
-Por fim, em $N_{4}$ entram as correntes $i_{5}$ e $i_{4}$ que somadas produzem $i_{0}$ (que sai de $N_{4}$). Logo, $i_{4} + i_{5} = i_{0}$, porém essa equação não será utilizada, pois, é uma combinação das outras três equações de nós obtidas até o momento. Agora, devemos passar ao passo 5 - escrever as equações das tensões nas malhas $M_{1}, M_{2} \text{ e } M_{3}$ com base na lei de kirchoff da tensão.
+Por fim, em $N_{4}$ entram as correntes $i_{5}$ e $i_{4}$ que somadas produzem $i_{0}$ (que sai de $N_{4}$). Logo, $i_{4} + i_{5} = i_{0}$. Porém, essa equação não será utilizada, pois, é uma combinação das outras três equações de nós obtidas até o momento. Agora, devemos passar ao passo 5 - escrever as equações das tensões nas malhas $M_{1}, M_{2} \text{ e } M_{3}$ com base na lei de kirchoff da tensão.
 
 </div>
 
@@ -694,7 +702,6 @@ $$ V_{M_{1}} = -R \cdot i_{2} - 30 \Omega \cdot i_{4} + 125 V = 0 $$
 ---
 
 
-
 <div class="grid-50-50">
 <div class="grid-element normal">
 
@@ -723,11 +730,63 @@ $$
 
 ---
 
+
+<div class="grid-50-50">
+<div class="grid-element regular">
+
 ## Algoritmo
 
-## Passo 6
+### Passo 6
 
-Tendo obtido equações dos elementos dos circuitos através da LKC e da LKC, obtemos:
+#### Escrever equações da lei de Ohm $(V = Ri)$ para cada resistor do circuito.
+
+Considerando que cada resistor no circuito apresenta sua própria diferença de potencial, atribua no circuito uma diferença de potencial $V_{k} = Ri_{n}$ para cada resistor, onde $k$ é uma letra qualquer do alfabeto e $i_{n}$ é a corrente que passa no resistor.
+
+Começando pelo resistor de resistência desconhecida $R$, $V_{R_{R}} = V_{a} = R \cdot i_{2}$.
+
+Para os demais resistores:
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+$$V_{R_{9 \Omega}} = V_{b} = 9 \cdot i_{1}$$
+$$V_{R_{6 \Omega}} = V_{c} = 6 \cdot i_{1}$$
+$$V_{R_{5 \Omega}} = V_{d} = 5 \cdot i_{3}$$
+
+</div>
+
+<div class="grid-element regular">
+
+$$V_{R_{10 \Omega}} = V_{e} = 9 \cdot i_{5}$$
+$$V_{R_{6 \Omega}} = V_{f} = 6 \cdot i_{5}$$
+$$V_{R_{5 \Omega}} = V_{g} = 30 \cdot i_{4}$$
+
+</div>
+
+</div>
+
+</div>
+<div class="grid-element" style="margin: auto;">
+
+<!-- _class: transparent -->
+![grid-img](./img/circuito_final_ohm.png)
+
+</div>
+</div>
+
+
+---
+
+## Algoritmo
+
+## Passo 7
+
+Tendo obtido equações dos elementos dos circuitos através da LKC, da LKT e da lei de Ohm, obtemos:
+
+<div class="grid-50-50">
+
+<div class="grid-element normal">
 
 $$
 \begin{align}
@@ -736,9 +795,29 @@ $$
     &i_{5} = i_{1} + i_{3} \\
     &-R \cdot i_{2} - 30 \Omega \cdot i_{4} + 125V = 0 \\
     &-9 i_{1} - 6 i_{1} + 5 i_{3} + R i_{2} = 0 \\
-    &-10 i_{5} - 6 i_{5} + 30 i_{4} - 5 i_{3} = 0
+    &-10 i_{5} - 6 i_{5} + 30 i_{4} - 5 i_{3} = 0 \\
 \end{align}
 $$
+
+</div>
+
+<div class="grid-element normal">
+
+$$
+\begin{align}
+    V_{a} &= R \cdot i_{2} \\
+    V_{b} &= 9 \cdot i_{1} \\
+    V_{c} &= 6 \cdot i_{1} \\
+    V_{d} &= 5 \cdot i_{3} \\
+    V_{e} &=10 \cdot i_{5} \\
+    V_{f} &= 6 \cdot i_{5} \\
+    V_{g} &=30 \cdot i_{4} \\
+\end{align}
+$$
+
+</div>
+
+</div>
 
 
 ---
@@ -747,53 +826,68 @@ $$
 
 ## Passo 6
 
+<div class="regular">
+
 Reorganizando as equações do circuito para construir um sistema linear terminamos o algoritmo de modelagem.
+
 
 $$
 \begin{cases}
-    &1 i_{0} - 1 i_{1} - 1 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
-    &0 i_{0} + 0 i_{1} + 1 i_{2} - 1 i_{3} - 1 i_{4} + 0 i_{5} &= 0\\
-    &0 i_{0} - 1 i_{1} + 0 i_{2} - 1 i_{3} + 0 i_{4} + 1 i_{5} &= 0\\
-    &0 i_{0} + 0 i_{1} - R i_{2} + 0 i_{3} - 30 i_{4} + 0 i_{5} &= -125\\
-    &0 i_{0} - 15 i_{1} + R i_{2} + 5 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
-    &0 i_{0} + 0 i_{1} + 0 i_{2} - 5 i_{3} + 30 i_{4} - 16 i_{5} &= 0\\
+    &1 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} + 0 i_{1} - R i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 1 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} - 9 i_{1} + 0 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 1 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} - 6 i_{1} + 0 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 1 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} + 0 i_{1} + 0 i_{2} - 5 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 1 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} + 0 i_{1} + 0 i_{2} + 0 i_{3} + 0 i_{4} - 10 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 1 V_{f} + 0 V_{g} + 0 i_{0} + 0 i_{1} + 0 i_{2} + 0 i_{3} + 0 i_{4} - 6 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 1 V_{g} + 0 i_{0} + 0 i_{1} + 0 i_{2} + 0 i_{3} - 30 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 1 i_{0} - 1 i_{1} - 1 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} + 0 i_{1} + 1 i_{2} - 1 i_{3} - 1 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} - 1 i_{1} + 0 i_{2} - 1 i_{3} + 0 i_{4} + 1 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} + 0 i_{1} - R i_{2} + 0 i_{3} - 30 i_{4} + 0 i_{5} &= -125\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} - 15 i_{1} + R i_{2} + 5 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 i_{0} + 0 i_{1} + 0 i_{2} - 5 i_{3} + 30 i_{4} - 16 i_{5} &= 0\\
 \end{cases}
 $$
+
+</div>
 
 
 ---
 
 ## Resolução do Circuito
 
+<div class = "small">
+
 Agora, devemos reescrever o sistema em sua representação matricial e usar um sistema computacional de álgebra linear simbólica (sympy do python) para nos auxiliar a resolver esse circuito e encontrar as correntes em função do resistor $R$ desconhecido:
 
 $$
+\begin{equation*}
 \begin{bmatrix}
-    1 & -1 & -1 & 0 & 0 & 0 \\
-    0 & 0 & 1 & -1 & -1 & 0 \\
-    0 & -1 & 0 & -1 & 0 & 1 \\
-    0 & 0 & -R & 0 & -30 & 0 \\
-    0 & -15 & R & 5 & 0 & 0 \\
-    0 & 0 & 0 & -5 & 30 & -16 \\
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0  & 0   & -R & 0   & 0   & 0   \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0  & -9  & 0  & 0   & 0   & 0   \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0  & -6  & 0  & 0   & 0   & 0   \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0  & 0   & 0  & -5  & 0   & 0   \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0  & 0   & 0  & 0   & 0   & -10 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0  & 0   & 0  & 0   & 0   & -6  \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0  & 0   & 0  & 0   & -30 & 0   \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1  & -1  & -1 & 0   & 0   & 0   \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  & 0   & 1  & -1  & -1  & 0   \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  & -1  & 0  & -1  & 0   & 1   \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  & 0   & -R & 0   & -30 & 0   \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  & -15 & R  & 5   & 0   & 0   \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  & 0   & 0  & -5  & 30  & -16 \\
 \end{bmatrix}
 \begin{bmatrix}
-    i_{0} \\
-    i_{1} \\
-    i_{2} \\
-    i_{3} \\
-    i_{4} \\
-    i_{5} \\
+V_a \\ V_b \\ V_c \\ V_d \\ V_e \\ V_f \\ V_g \\ i_0 \\ i_1 \\ i_2 \\ i_3 \\ i_4 \\ i_5
 \end{bmatrix}
 =
 \begin{bmatrix}
-    0 \\
-    0 \\
-    0 \\
-    -125 \\
-    0 \\
-    0 \\
+0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ -125 \\ 0 \\ 0
 \end{bmatrix}
+\end{equation*}
 $$
+
+</div>
 
 
 ---

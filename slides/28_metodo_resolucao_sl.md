@@ -1,5 +1,4 @@
 
-
 <div class="grid-50-50">
 <div class="grid-element normal">
 
