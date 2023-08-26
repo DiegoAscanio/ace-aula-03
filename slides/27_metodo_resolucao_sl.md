@@ -1,27 +1,25 @@
-
 ## Algoritmo
 
-### Passo 5
+### Passo 7
 
 <div class="grid-50-50">
+
 <div class="grid-element small">
 
-4. Na equação $V_{M_{1}} = -R \cdot i_{2} + \cdots = 0$, as reticências ($\cdots$) representam as tensões dos outros elementos que existem na malha mas que ainda não foram calculadas. Para continuar o algoritmo, escolha o próximo elemento não visitado no sentido escolhido para percorrer a malha como elemento atual.
-5. repita os passos 3 e 4 do subalgoritmo do passo 5 até que todos os elementos da malha tenham sido visitados.
+Agora, devemos fazer as equações das tensões nas malhas pelos princípios da LKT que preconizam que a soma das diferenças de potencial em uma malha é sempre nula. Existe um subalgoritmo deste passo para fazer a resolução que para cada malha do circuito determina que você:
 
-Aplicando o algoritmo para os próximos elementos a serem visitados $R = 30 \Omega$ e a fonte de $125 V$, no resistor de $30 \Omega$ a tensão diminui, portanto:
-$$ V_{M_{1}} = -R \cdot i_{2} - 30 \Omega \cdot i_{4} + \cdots = 0 $$
-
-Na fonte de $125 V$, o sentido escolhido faz a tensão aumentar (vai do do $-$ para o $+$). Portanto:
-
-$$ V_{M_{1}} = -R \cdot i_{2} - 30 \Omega \cdot i_{4} + 125 V = 0 $$
+1. Escolha um elemento da malha como elemento atual
+    - Na malha $M_{1}$, vamos escolher o elemento $R$.
+2. Escolha um sentido (horário ou anti-horário) para percorrer a malha a partir do elemento escolhido. Escolheremos o sentido horário.
 
 </div>
+
 <div class="grid-element">
 
 <!-- _class: transparent -->
-![grid-img](./img/circuito_final.png)
+![grid-img](./img/passo-5.png)
 
 </div>
+
 </div>
 
