@@ -4,7 +4,7 @@
 
 <div class="grid-element regular">
 
-Problemas 2.18 ao 2.24 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
+Problemas 2.18 ao 2.26 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
 
 ### Respostas dos Exercícios Pares (para conferência)
 
@@ -33,6 +33,18 @@ Problemas 2.18 ao 2.24 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de N
     $P_{10k\Omega} = 11.11W, P_{15k\Omega} = 16.67W, P_{4k\Omega} = 0$
 - b) A queda de tensão na fonte de corrente é de $833.33 V$ e a potência do circuito é de $83.33W$
 - c) $83.33W$
+
+2.26
+
+- a)
+$$
+\begin{align}
+    p_{130} &= -1950 W \\
+    p_{460} &= -13800 W
+\end{align}
+$$
+
+- b) A potência total fornecida é de $15750W$ e somando as potências dissipadas nos resistores, verifica-se que a potência total dissipada é igual à potência total fornecida.
 
 </div>
 

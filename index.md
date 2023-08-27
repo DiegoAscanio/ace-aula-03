@@ -1714,7 +1714,7 @@ A forma escada difere da forma escada reduzida por linhas porque na última, tod
 
 <div class="grid-element regular">
 
-Problemas 2.18 ao 2.24 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
+Problemas 2.18 ao 2.26 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
 
 ### Respostas dos Exercícios Pares (para conferência)
 
@@ -1744,6 +1744,41 @@ Problemas 2.18 ao 2.24 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de N
 - b) A queda de tensão na fonte de corrente é de $833.33 V$ e a potência do circuito é de $83.33W$
 - c) $83.33W$
 
+2.26
+
+- a)
+$$
+\begin{align}
+    p_{130} &= -1950 W \\
+    p_{460} &= -13800 W
+\end{align}
+$$
+
+- b) A potência total fornecida é de $15750W$ e somando as potências dissipadas nos resistores, verifica-se que a potência total dissipada é igual à potência total fornecida.
+
 </div>
+
+</div>
+
+
+---
+
+# Para Casa!
+
+Brincar com o sympy e o numpy para resolver sistemas lineares com variáveis simbólicas (sympy) e com variáveis numéricas (numpy).
+
+
+---
+
+<div class="cabecalho large">
+Referências Bibliográficas
+</div>
+<div class="conteudo normal">
+
+- RIEDEL, SUSAN A.; NILSSON, James W. - Circuitos Elétricos 10ª ed. 2015.
+- MELO, EMERSON G. de. Curso: LOM3202 - Circuitos Elétricos (2020). 2020. Disponível em: https://edisciplinas.usp.br/course/view.php?id=82680. Acesso em 31 de Julho de 2023.
+- Khan Academy. Curso de Engenharia Elétrica. Disponível em: https://pt.khanacademy.org. Acesso em 31 de Julho de 2023.
+- CLEAVER, THOMAS G. - ECE220 Lesson 3 - Acesso em 27 de Agosto de 2023. https://engineering.louisville.edu/raise/EE220/L3.html.
+- DE ARAÚJO, THABATTA M. A. - SLIDES E NOTAS DE AULAS - Acesso em 21 de Agosto de 2023. Disponível junto à profª Thabatta.
 
 </div>
