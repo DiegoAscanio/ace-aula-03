@@ -1069,7 +1069,7 @@ Portanto, agora o circuito está resolvido, pois, é possível calcular todas as
 
 <div class="grid-element normal">
 
-Como descobrir a corrente fornecida pela fonte de corrente do circuito quando a corrente que passa no resistor de $12 \Omega$ (conectado ao polo negativo da fonte de tensão de $80V$) é de $4A$?
+Como descobrir a corrente fornecida pela fonte de corrente do circuito quando a corrente que passa no resistor de $12 \Omega$ (conectado ao polo negativo da fonte de tensão de $80V$) é de $4A$ entrando pela esquerda e saindo à direita do resistor?
 
 - Aplicando o algoritmo!
 
@@ -1115,11 +1115,19 @@ Determine quais são os elementos (resistores e fontes) do circuito e identifiqu
 
 <div class="grid-50-50">
 
-<div class="grid-element normal">
+<div class="grid-element small">
 
 ### Passo 2
 
-Atribua uma corrente (arbitrando sua direção) em cada elemento. Elementos no mesmo ramo (em série entre dois nós) devem ser atribuídos à mesma corrente. Não se esqueça de atribuir correntes às fontes de tensão;
+Atribua uma corrente (arbitrando sua direção) em cada elemento. Elementos no mesmo ramo (em série entre dois nós) devem ser atribuídos à mesma corrente. Não se esqueça de atribuir correntes às fontes de tensão.
+
+**MUITO, MUITO, MUITO IMPORTANTE:**
+
+Sabemos, pelo enunciado do problema, que a corrente $i_{0}$ vale $4A$ quando entra pela esquerda e sai a direita do resistor de $12 \Omega$.
+
+1. É possível arbitrar qualquer sentido de circulação da corrente! 
+2. Arbitramos, para melhorar nossa visualização do circuito, que a corrente $i_{0}$ entra da direita para a esquerda no resistor $R_{7}$ (e na fonte).
+    1. Como isso é contrário ao previamente estabelecido, então, a corrente $i_{0}$ no sentido de entrada da direita para a esquerda vale o simétrico (o contrário: $-4A$) do sentido da esquerda para a direita. Desta forma, porque arbitrei $i_{0}$ entrando da direita para a esquerda, mas, sabendo que $i_{0}$ entra originalmente da esquerda para a direita em $R_{7}$, então, quando eu for formular as equações, devo considerar o valor de $i_{0}$ como $-4A$!
 
 </div>
 
@@ -1361,7 +1369,7 @@ A partir das equações de corrente obtidas em 6, 7 e 8, se você seguiu o méto
 
 #### Equações
 
-Como $i_{0} = 4A$
+Como $i_{0} = 4A$ da esquerda para direita, mas, estamos considerando seu sentido da direita para esquerda, então, para fins de resolução, consideramos $i_{0}$ como $-4A$ na LKC e na LKT, pois, não faz diferença na lei de Ohm (Ver [Slide 41](#41))
 
 <div class="grid-50-50">
 
@@ -1374,7 +1382,7 @@ $$
 &V_{c} - 4 i_{1} &= &0 \\
 &V_{d} - 6 i_{5} &= &0 \\
 &V_{e} - 10 i_{5} &= &0 \\
-&V_{f} &= &48 \\
+&V_{f} &= &48^{1} \\
 &V_{h} - 4 i_{2} &= &0
 \end{align}
 $$
@@ -1385,10 +1393,11 @@ $$
 $$
 \begin{align}
 &V_{i} - 24 i_{3} &= 0 \\
-&i_{1} + i_{2} &= 4 \\
+&i_{1} + i_{2} &= -4 \\
 &i_{2} - i_{3} - i_{4} &= 0 \\
 &i_{5} - i_{1} - i_{3} &= 0 \\
-&-4 i_{2} - V_{g} &= -32 \\
+& 80 -4 i_{2} - V_{g} - (12 \cdot -4) &= 0 \rightarrow \\
+& \therefore -4 i_{2} - V_{g} &= -128 \\
 & -24 i_{3} - 16 i_{5} + V_{g} &= 0 \\
 & -24 i_{1} + 24 i_{3} + 4 i_{2} &= 0
 \end{align}
@@ -1432,10 +1441,10 @@ $$
     &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 1 V_{f} + 0 V_{g} + 0 V_{h} + 0 V_{i} + 0 i_{1} + 0 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 48\\
     &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 1 V_{h} + 0 V_{i} + 0 i_{1} - 4 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
     &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 V_{h} + 1 V_{i} + 0 i_{1} + 0 i_{2} -24 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
-    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 V_{h} + 0 V_{i} + 1 i_{1} + 1 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= 4\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 V_{h} + 0 V_{i} + 1 i_{1} + 1 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= -4\\
     &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 V_{h} + 0 V_{i} + 0 i_{1} + 1 i_{2} - 1 i_{3} - 1 i_{4} + 0 i_{5} &= 0\\
     &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 V_{h} + 0 V_{i} - 1 i_{1} + 0 i_{2} - 1 i_{3} + 0 i_{4} + 1 i_{5} &= 0\\
-    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} - 1 V_{g} + 0 V_{h} + 0 V_{i} + 0 i_{1} - 4 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= -32\\
+    &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} - 1 V_{g} + 0 V_{h} + 0 V_{i} + 0 i_{1} - 4 i_{2} + 0 i_{3} + 0 i_{4} + 0 i_{5} &= -128\\
     &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 1 V_{g} + 0 V_{h} + 0 V_{i} + 0 i_{1} + 0 i_{2} - 24 i_{3} + 0 i_{4} - 16 i_{5} &= 0\\
     &0 V_{a} + 0 V_{b} + 0 V_{c} + 0 V_{d} + 0 V_{e} + 0 V_{f} + 0 V_{g} + 0 V_{h} + 0 V_{i} - 24 i_{1} + 4 i_{2} + 24 i_{3} + 0 i_{4} + 0 i_{5} &= 0\\
 \end{cases}
@@ -1450,7 +1459,7 @@ $$
 
 <div class = "small">
 
-Agora, devemos reescrever o sistema em sua representação matricial e usar um sistema computacional de álgebra linear simbólica (sympy do python) para nos auxiliar a resolver esse circuito e encontrar as correntes em função do resistor $R$ desconhecido:
+Agora, devemos reescrever o sistema em sua representação matricial e usar um sistema computacional de álgebra linear numérica(numpy do python) para nos auxiliar a resolver esse circuito:
 
 <!-- 
 a & b & c & d & e & f & g & h  & i   & 1  & 2   & 3   & 4   & 5  \\
@@ -1479,9 +1488,262 @@ V_a \\ V_b \\ V_c \\ V_d \\ V_e \\ V_f \\ V_g \\ V_h \\ V_i \\ i_1 \\ i_2 \\ i_3
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 48\\ 0 \\ 0 \\ 4 \\ 0 \\ 0 \\ -32 \\ 0 \\ 0
+0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 48\\ 0 \\ 0 \\ -4 \\ 0 \\ 0 \\ -128 \\ 0 \\ 0
 \end{bmatrix}
 \end{equation*}
 $$
+
+</div>
+
+
+---
+
+## Resolução do Circuito No JupyterLite pelo SymPy
+
+<iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=exemplo-2.ipynb" width=100% height=100%></iframe>
+
+
+---
+
+## Resolução do Circuito
+
+Resolvendo o sistema linear do circuito obtemos:
+
+<div class="grid-50-50 normal">
+
+<div class="grid-element">
+
+$$
+\begin{align}
+    &V_a = 16.00V\\
+    &V_b = 24.00V\\
+    &V_c = 8.00V\\
+    &V_d = 30.00V\\
+    &V_e = 50.00V\\
+    &V_f = 48.00V\\
+    &V_g = 152.00V\\
+    &V_h = -24.00V\\
+    &V_i = 72.00V\\
+\end{align}
+$$
+
+</div>
+
+<div class="grid-element">
+
+$$
+\begin{align}
+    &i_1 = 2.00A\\
+    &i_2 = -6.00A\\
+    &i_3 = 3.00A\\
+    &i_4 = -9.00A\\
+    &i_5 = 5.00A\\
+\end{align}
+$$
+
+</div>
+
+Logo, a corrente $i_{4}$ gerada pela fonte de corrente é de $-9 A$.
+
+</div>
+
+
+---
+
+<!-- _class: lead -->
+# Instrumentos Para Medição de Grandezas Elétricas
+
+
+---
+
+## Instrumentos de Medida - Voltímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O voltímetro é um instumento que mede as tensões (diferenças de potencial) que existem entre dois pontos quaisquer em um circuito elétrico;
+- Em um circuito, o voltímetro deve sempre ser ligado em paralelo ao elemento cuja tensão desejamos medir;
+
+<!-- _class: transparent -->
+![](./img/voltimetro_paralelo.png)
+
+- O voltímetro ideal não causa nenhuma alteração no circuito, por possuir resistência infinita;
+- O voltímetro real não apresenta resistência infinita, apenas uma resistência muito grande, destarte, causa pequenas alterações no circuito;
+- O voltímetro apresenta limites de tensões que consegue ler, temos de levar isso em consideração.
+
+</div>
+
+<div class="grid-element regular">
+
+<!-- _class: transparent -->
+![](./img/voltimetro.png)
+Exemplo de voltímetro analógico para tensões contínuas.
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Amperímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O amperímetro é um instumento que mede a corrente que passa em um elemento de um circuito elétrico;
+- Em um circuito, o amperímetro deve sempre ser ligado em série ao elemento cuja corrente desejamos medir;
+
+<!-- _class: transparent -->
+![](./img/amperimetro_serie.png)
+
+- O amperímetro ideal tem reistência nula;
+- O amperímetro real não apresenta resistência nula, apenas uma resistência muito pequena, destarte, por si só causa pequenas alterações nas correntes que lê.
+- Devemos nos atentar aos limites operacionais do instrumento;
+
+</div>
+
+<div class="grid-element regular">
+
+<!-- _class: transparent -->
+![](./img/amperimetro.png)
+Exemplo de amperímetro analógico.
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Ohmímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O ohmímetro é um instumento que mede a resistência de um elemento em um circuito elétrico;
+- Em um circuito, o ohmímetro deve sempre ser ligado aos terminais do elemento cuja resistência desejamos medir;
+- O circuito deve estar desenergizado para que a medida da resistência seja correta;
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/ohmimetro_paralelo.png)
+
+</center>
+
+</div>
+
+<div class="grid-element regular">
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/ohmimetro.png)
+Exemplo de ohmímetro analógico.
+
+</center>
+
+- O ohmímetro é um elemento que dispõe de uma fonte de tensão estável $V$, que ao se conectar aos terminais de um elemento (resistor) faz circular uma corrente elétrica por ele.
+- Essa corrente elétrica $I$ é medida pelo instrumento e pela lei de Ohm, ele nos mostra a resistência calculada pela equação $R = {V \over I}$.
+- Devemos nos atentar aos limites operacionais do instrumento;
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Multímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O multímetro é um instumento que mede as três grandezas elétricas principais $- V, R, I -$, como também capacitância, indutância e continuidade de circuitos;
+- Funciona através de pontas de prova e chaves seletoras das grandezas (e suas escalas);
+- Está disponível em múltiplos preços, variando de R$ 16,00 a 2,5 salários mínimos.
+- É necessário se ater a seus limites operacionais;
+- Funciona da mesma forma que os outros três instrumentos e deve ser aplicado aos circuitos de acordo com o esperado para a grandeza a se medir;
+    - Exemplo: em série ao elemento, se a grandeza medida for corrente, em paralelo se for tensão e em paralelo com o circuito desenergizado se for resistência;
+- Disponíveis nos nossos laboratórios, serão usados na questão experimental da atividade avaliativa 1;
+
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/multimetro_paralelo.png)
+
+</center>
+
+</div>
+
+<div class="grid-element regular">
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/multimetro.png)
+Exemplo de multímetro digital.
+
+</center>
+
+</div>
+
+</div>
+
+
+---
+
+## Desafio
+
+Os sete primeiros estudantes que entregarem a matriz do sistema linear das correntes do circuito de exemplo dessa aula em sua forma escada pelo método de gauss, demonstrando cada operação de combinação linear entre as linhas da matriz para sua transformação na sua forma escada e em formato LATEX ganharão um ponto e meio extras.
+
+A forma escada difere da forma escada reduzida por linhas porque na última, todos os elementos acima e abaixo do elemento $A_{ii}$ são zero. Na forma escada, apenas os elementos abaixo de $A_{ii}$ são nulos.
+
+
+---
+
+## Lista 3 de Exercícios
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+Problemas 2.18 ao 2.24 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
+
+### Respostas dos Exercícios Pares (para conferência)
+
+2.18
+- a) $i_{a} = 2A, i_{b} = 0.5A, i_{g} = 2.5A$
+- os questões subsequentes derivam das respostas da a)
+
+2.20
+- a) $v_{o} = 16V, i_{0} = 8 mA$
+- b) $i_{g} = 10 mA$
+- c) $P = 160mW$
+
+2.22
+
+- a) $R = 7 \Omega$
+- b) $P = 1 kW$
+
+</div>
+
+<div class="grid-element regular">
+
+2.24
+
+- a) $i_{cd} = 33.33mA, i_{ab} = i_{bd} = 66.67mA, i_{bc} = 0$
+    $P_{5k\Omega} = 22.22W, P_{7.5k\Omega} = 33.33W$, 
+    $P_{10k\Omega} = 11.11W, P_{15k\Omega} = 16.67W, P_{4k\Omega} = 0$
+- b) A queda de tensão na fonte de corrente é de $833.33 V$ e a potência do circuito é de $83.33W$
+- c) $83.33W$
+
+</div>
 
 </div>

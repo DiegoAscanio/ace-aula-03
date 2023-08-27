@@ -2,7 +2,7 @@
 
 <div class = "small">
 
-Agora, devemos reescrever o sistema em sua representação matricial e usar um sistema computacional de álgebra linear simbólica (sympy do python) para nos auxiliar a resolver esse circuito e encontrar as correntes em função do resistor $R$ desconhecido:
+Agora, devemos reescrever o sistema em sua representação matricial e usar um sistema computacional de álgebra linear numérica(numpy do python) para nos auxiliar a resolver esse circuito:
 
 <!-- 
 a & b & c & d & e & f & g & h  & i   & 1  & 2   & 3   & 4   & 5  \\
@@ -31,7 +31,7 @@ V_a \\ V_b \\ V_c \\ V_d \\ V_e \\ V_f \\ V_g \\ V_h \\ V_i \\ i_1 \\ i_2 \\ i_3
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 48\\ 0 \\ 0 \\ 4 \\ 0 \\ 0 \\ -32 \\ 0 \\ 0
+0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 48\\ 0 \\ 0 \\ -4 \\ 0 \\ 0 \\ -128 \\ 0 \\ 0
 \end{bmatrix}
 \end{equation*}
 $$

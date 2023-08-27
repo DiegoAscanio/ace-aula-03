@@ -4,7 +4,7 @@
 
 <div class="grid-element normal">
 
-Como descobrir a corrente fornecida pela fonte de corrente do circuito quando a corrente que passa no resistor de $12 \Omega$ (conectado ao polo negativo da fonte de tensão de $80V$) é de $4A$?
+Como descobrir a corrente fornecida pela fonte de corrente do circuito quando a corrente que passa no resistor de $12 \Omega$ (conectado ao polo negativo da fonte de tensão de $80V$) é de $4A$ entrando pela esquerda e saindo à direita do resistor?
 
 - Aplicando o algoritmo!
 
