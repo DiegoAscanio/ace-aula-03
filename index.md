@@ -1553,234 +1553,109 @@ Logo, a corrente $i_{4}$ gerada pela fonte de corrente é de $-9 A$.
 ---
 
 <!-- _class: lead -->
-# Instrumentos Para Medição de Grandezas Elétricas
+
+# Método das Tensões dos Nós
 
 
 ---
 
-## Instrumentos de Medida - Voltímetro
+<style scoped>
+    p {
+        text-align: justify;
+        font-size: 20px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+</style>
 
-<div class="grid-50-50">
+## Método das Tensões dos Nós
 
-<div class="grid-element regular">
+É um método para análise (e solução) de circuitos elétricos que busca a descoberta de grandezas desconhecidas dos elementos (ex. correntes e tensões) à partir das tensões existentes entre nós (pontos de encontro de dois ou mais elementos) de um circuito elétrico.
 
-- O voltímetro é um instumento que mede as tensões (diferenças de potencial) que existem entre dois pontos quaisquer em um circuito elétrico;
-- Em um circuito, o voltímetro deve sempre ser ligado em paralelo ao elemento cuja tensão desejamos medir;
+É desejável porque simplifica a solução de circuitos — em comparação às leis de kirchoff da corrente nos nós e da tensão nas malhas — ao permitir que a lei de kirchoff das correntes nos nós seja escrita em função das tensões que estes nós apresentam em relação a um nó de referência.
 
-<!-- _class: transparent -->
-![](./img/voltimetro_paralelo.png)
-
-- O voltímetro ideal não causa nenhuma alteração no circuito, por possuir resistência infinita;
-- O voltímetro real não apresenta resistência infinita, apenas uma resistência muito grande, destarte, causa pequenas alterações no circuito;
-- O voltímetro apresenta limites de tensões que consegue ler, temos de levar isso em consideração.
-
+<div class="flex-container">
+<div class="left-element">
+<p>Um nó de referência é um ponto de partida — normalmente o nó com a maior quantidade de elementos — conectado ao referencial nulo (terra) através do qual pode-se calcular as diferenças de potencial em relação aos demais nós do circuito a partir das quedas (ou subidas) de tensão ocasionadas pelos elementos existentes entre o nó de referência e nó que se deseja descobrir a tensão.</p>
 </div>
-
-<div class="grid-element regular">
-
-<!-- _class: transparent -->
-![](./img/voltimetro.png)
-Exemplo de voltímetro analógico para tensões contínuas.
-
+<div class="right-element">
+<figure>
+<img src="https://i.imgur.com/qHiTLLH.png" class="transparent" alt="grid-img">
+<figcaption>Figura 1 - Exemplo de Nó de Referência.
+</figcaption>
+</figure>
 </div>
-
-</div>
-
-
----
-
-## Instrumentos de Medida - Amperímetro
-
-<div class="grid-50-50">
-
-<div class="grid-element regular">
-
-- O amperímetro é um instumento que mede a corrente que passa em um elemento de um circuito elétrico;
-- Em um circuito, o amperímetro deve sempre ser ligado em série ao elemento cuja corrente desejamos medir;
-
-<!-- _class: transparent -->
-![](./img/amperimetro_serie.png)
-
-- O amperímetro ideal tem reistência nula;
-- O amperímetro real não apresenta resistência nula, apenas uma resistência muito pequena, destarte, por si só causa pequenas alterações nas correntes que lê.
-- Devemos nos atentar aos limites operacionais do instrumento;
-
-</div>
-
-<div class="grid-element regular">
-
-<!-- _class: transparent -->
-![](./img/amperimetro.png)
-Exemplo de amperímetro analógico.
-
-</div>
-
 </div>
 
 
 ---
 
-## Instrumentos de Medida - Ohmímetro
+<style scoped>
+    p {
+        font-size: 18px;
+        text-align: justify;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    .flex-container {
+        display: flex;
+    }
+    .flex-container > figure {
+        flex: 1;
+    }
+    img {
+        width: 100%;
+    }
+    .flex-container > p {
+        flex: 3;
+    }
+    figcaption {
+        text-align: center;
+        font-size: 10px;
+    }
+</style>
 
-<div class="grid-50-50">
+## Método das tensões dos nós
 
-<div class="grid-element regular">
-
-- O ohmímetro é um instumento que mede a resistência de um elemento em um circuito elétrico;
-- Em um circuito, o ohmímetro deve sempre ser ligado aos terminais do elemento cuja resistência desejamos medir;
-- O circuito deve estar desenergizado para que a medida da resistência seja correta;
-
-<center>
-
-<!-- _class: transparent -->
-![](./img/ohmimetro_paralelo.png)
-
-</center>
-
+<div class="flex-container">
+<figure>
+<img src="https://i.imgur.com/z21SbFS.png" class="transparent">
+<figcaption>Figura 2 - Elemento de Exemplo</figcaption>
+</figure>
+<p>
+O que torna o método dos nós possível? A lei de ohm, que diz que a corrente de um elemento é dada pela razão da diferença de potencial a qual está submetida sobre sua resistência. 
+</p>
 </div>
 
-<div class="grid-element regular">
+Essa diferença de potencial V é sempre dada pela tensão em um ponto A (\\(V\_A\\)) menos a tensão de um ponto B (\\(V\_B\\)) — \\(V = V\_A - V\_B\\). Logo, para o elemento de exemplo da Figura 2:
 
-<center>
+\\[ i = {{V\_A - V\_B}\over{R}} \\]
 
-<!-- _class: transparent -->
-![](./img/ohmimetro.png)
-Exemplo de ohmímetro analógico.
+Generalizando isto para todos os elementos de um circuito que convergem em um nó qualquer, conseguimos escrever a lei de kirchhoff das correntes para um nó em função das tensões dos elementos que convergem nele!
 
-</center>
 
-- O ohmímetro é um elemento que dispõe de uma fonte de tensão estável $V$, que ao se conectar aos terminais de um elemento (resistor) faz circular uma corrente elétrica por ele.
-- Essa corrente elétrica $I$ é medida pelo instrumento e pela lei de Ohm, ele nos mostra a resistência calculada pela equação $R = {V \over I}$.
-- Devemos nos atentar aos limites operacionais do instrumento;
-
-</div>
-
-</div>
+Ao permitir analisar correntes em funções das tensões dos nós, as equações da lei de kirchoff da tensão ficam implicitas no método das tensões dos nós e portanto, são eliminadas das análises, diminuindo o número de equações e consequentemente, simplificando o sistema, demonstrando assim a sua desejabilidade!
 
 
 ---
 
-## Instrumentos de Medida - Multímetro
-
-<div class="grid-50-50">
-
-<div class="grid-element regular">
-
-- O multímetro é um instumento que mede as três grandezas elétricas principais $- V, R, I -$, como também capacitância, indutância e continuidade de circuitos;
-- Funciona através de pontas de prova e chaves seletoras das grandezas (e suas escalas);
-- Está disponível em múltiplos preços, variando de R$ 16,00 a 2,5 salários mínimos.
-- É necessário se ater a seus limites operacionais;
-- Funciona da mesma forma que os outros três instrumentos e deve ser aplicado aos circuitos de acordo com o esperado para a grandeza a se medir;
-    - Exemplo: em série ao elemento, se a grandeza medida for corrente, em paralelo se for tensão e em paralelo com o circuito desenergizado se for resistência;
-- Disponíveis nos nossos laboratórios, serão usados na questão experimental da atividade avaliativa 1;
-
-
-<center>
-
-<!-- _class: transparent -->
-![](./img/multimetro_paralelo.png)
-
-</center>
-
-</div>
-
-<div class="grid-element regular">
-
-<center>
-
-<!-- _class: transparent -->
-![](./img/multimetro.png)
-Exemplo de multímetro digital.
-
-</center>
-
-</div>
-
-</div>
-
-
----
-
-## Desafio
-
-Os sete primeiros estudantes que entregarem a matriz do sistema linear das correntes do circuito de exemplo dessa aula em sua forma escada pelo método de gauss, demonstrando cada operação de combinação linear entre as linhas da matriz para sua transformação na sua forma escada e em formato LATEX ganharão um ponto e meio extras.
-
-A forma escada difere da forma escada reduzida por linhas porque na última, todos os elementos acima e abaixo do elemento $A_{ii}$ são zero. Na forma escada, apenas os elementos abaixo de $A_{ii}$ são nulos.
-
-
----
-
-## Lista 3 de Exercícios
-
-<div class="grid-50-50">
-
-<div class="grid-element regular">
-
-Problemas 2.18 ao 2.26 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
-
-### Respostas dos Exercícios Pares (para conferência)
-
-2.18
-- a) $i_{a} = 2A, i_{b} = 0.5A, i_{g} = 2.5A$
-- os questões subsequentes derivam das respostas da a)
-
-2.20
-- a) $v_{o} = 16V, i_{0} = 8 mA$
-- b) $i_{g} = 10 mA$
-- c) $P = 160mW$
-
-2.22
-
-- a) $R = 7 \Omega$
-- b) $P = 1 kW$
-
-</div>
-
-<div class="grid-element regular">
-
-2.24
-
-- a) $i_{cd} = 33.33mA, i_{ab} = i_{bd} = 66.67mA, i_{bc} = 0$
-    $P_{5k\Omega} = 22.22W, P_{7.5k\Omega} = 33.33W$, 
-    $P_{10k\Omega} = 11.11W, P_{15k\Omega} = 16.67W, P_{4k\Omega} = 0$
-- b) A queda de tensão na fonte de corrente é de $833.33 V$ e a potência do circuito é de $83.33W$
-- c) $83.33W$
-
-2.26
-
-- a)
-$$
-\begin{align}
-    p_{130} &= -1950 W \\
-    p_{460} &= -13800 W
-\end{align}
-$$
-
-- b) A potência total fornecida é de $15750W$ e somando as potências dissipadas nos resistores, verifica-se que a potência total dissipada é igual à potência total fornecida.
-
-</div>
-
-</div>
-
-
----
-
-# Para Casa!
-
-Brincar com o sympy e o numpy para resolver sistemas lineares com variáveis simbólicas (sympy) e com variáveis numéricas (numpy).
-
-
----
-
-<div class="cabecalho large">
-Referências Bibliográficas
-</div>
-<div class="conteudo normal">
-
-- RIEDEL, SUSAN A.; NILSSON, James W. - Circuitos Elétricos 10ª ed. 2015.
-- MELO, EMERSON G. de. Curso: LOM3202 - Circuitos Elétricos (2020). 2020. Disponível em: https://edisciplinas.usp.br/course/view.php?id=82680. Acesso em 31 de Julho de 2023.
-- Khan Academy. Curso de Engenharia Elétrica. Disponível em: https://pt.khanacademy.org. Acesso em 31 de Julho de 2023.
-- CLEAVER, THOMAS G. - ECE220 Lesson 3 - Acesso em 27 de Agosto de 2023. https://engineering.louisville.edu/raise/EE220/L3.html.
-- DE ARAÚJO, THABATTA M. A. - SLIDES E NOTAS DE AULAS - Acesso em 21 de Agosto de 2023. Disponível junto à profª Thabatta.
-
-</div>
+## Método da Tensão nos Nós — Exemplo e Algortimo
