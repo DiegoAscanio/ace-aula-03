@@ -1742,4 +1742,204 @@ Ao permitir analisar correntes em funções das tensões dos nós, as equações
 
 ---
 
+<style scoped>
+    p, li {
+        text-align: justify;
+        font-size: 14pt;
+    }
+</style>
+
 ## Método da Tensão nos Nós — Exemplo e Algortimo
+
+O cerne do método das tensões dos nós está em encontrar as diferenças de potencial nos nós de um circuito em relação ao nó de referência e a partir destas tensões, especificar as correntes que transitam pelos nós do circuito em função de tal tensão. Portanto, o método pode ser sistematizado em 6 passos:
+
+1. Identificar todos os nós do circuito atribuindo nomes (letras latinas, gregas, etc) a cada um deles;
+2. Escolher um nó de referência;
+    - Uma boa escolha de nó de referência é aquele que permite calcular de imediato a tensão nodal de outro nó — exemplo, um nó que esteja ligado ao terminal de uma fonte de tensão — ou na ausência de tal nó, um nó que esteja ligado ao maior número de elementos possíveis do circuito;
+        - Escolher um nó de referência que permita encontrar de imediato a tensão nodal de outro(s) nó(s) reduz o número de equações a serem resolvidas;
+3. Atribuir tensões a todos os outros nós em relação ao nó de referência;
+    - Se forem nós cujos caminhos ao nó de referência possuam apenas fontes de tensão, a tensão é conhecida e deve ser atribuída como tensão do nó o valor da(s) fonte(s) de tensão conhecidas;
+    - Senão, atribuir uma variável de tensão ao nó — exemplo: \\(V\_k\\) para o nó de nome \\(k\\);
+
+
+---
+
+<style scoped>
+    p, li {
+        text-align: justify;
+        font-size: 14pt;
+    }
+</style>
+
+## Método da Tensão nos Nós — Exemplo e Algortimo
+
+O cerne do método das tensões dos nós está em encontrar as diferenças de potencial nos nós de um circuito em relação ao nó de referência e a partir destas tensões, especificar as correntes que transitam pelos nós do circuito em função de tal tensão. Portanto, o método pode ser sistematizado em 6 passos:
+
+4. Atribuir correntes (sentidos arbitrários) para todos os elementos do circuito (fontes e resistores, por hora) e quando possível, escrever tais correntes em função das tensões que entram e que saem destes elementos (apenas nos resistores no caso) a partir da lei de Ohm que especifica que:
+
+\\[
+    i_\text{ab} = \frac{v_\text{ab}}{R} = \frac{v_\text{a} - v_\text{b}}{R}
+\\]
+
+5. Para cada um dos nós cujas tensões sejam desconhecidas:
+    - Escrever a LKC para o nó em questão, considerando as correntes que entram e que saem do nó em função das tensões nodais desconhecidas, quando aplicável, e em função das correntes oriundas de fontes de corrente e das correntes oriundas de fontes de tensão, também quando aplicável.
+6. Construir um sistema de equações lineares a partir das equações de LKC escritas para cada nó desconhecido e resolver tal sistema para encontrar as tensões nodais desconhecidas, resolvendo desta forma o circuito.
+
+
+---
+
+<style scoped>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 3;
+        margn-right: 10px;
+    }
+    .flex-image {
+        flex: 1;
+    }
+</style>
+
+## Método das Tensões dos Nós - Circuito de Exemplo
+
+<!-- _class: transparent -->
+![](img/exemplo-tensao-dos-nos.png)
+
+
+---
+
+<style scoped>
+    img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 1;
+        margn-right: 10px;
+    }
+    .flex-image {
+        flex: 1;
+    }
+</style>
+
+## Método das Tensões dos Nós - Passo 1 - Identificação dos Nós
+
+<div class="flex-container">
+<div class="flex-paragraph">
+
+Passo 1 - Identificação dos nós
+
+Nós identificados:
+
+1. α
+2. β
+3. γ
+4. δ
+
+</div>
+<div class="flex-image">
+
+<!-- _class: transparent -->
+![](img/exemplo-tensao-dos-nos-passo-1.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 1;
+        margn-right: 10px;
+        font-size: 18pt;
+        text-align: justify;
+    }
+    .flex-image {
+        flex: 2;
+    }
+</style>
+
+## Método das Tensões dos Nós - Passo 2 - Escolha do Nó de Referência
+
+<div class="flex-container">
+<div class="flex-paragraph">
+
+Passo 2 - Escolha do nó de referência
+
+Escolhemos como nó de referência o nó α por ele permitir deduzir de imediato a tensão nodal do nó δ — \\(V_\delta = 5V\\) — elminando desta forma duas equações de dois nós (o de referência, tensão \\(0V\\), e o nó δ com tensão \\(V_\delta = 5V\\)) do sistema de equações a resolver.
+
+</div>
+<div class="flex-image">
+
+<!-- _class: transparent -->
+![](img/exemplo-tensao-dos-nos-passo-2.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 1;
+        margn-right: 10px;
+        font-size: 18pt;
+        text-align: justify;
+    }
+    .flex-image {
+        flex: 2;
+    }
+</style>
+
+## Método das Tensões dos Nós - Passo 3 - Escolha do Nó de Referência
+
+<div class="flex-container">
+<div class="flex-paragraph">
+
+Passo 2 - Escolha do nó de referência
+
+Escolhemos como nó de referência o nó α por ele permitir deduzir de imediato a tensão nodal do nó δ — \\(V_\delta = 5V\\) — elminando desta forma duas equações de dois nós (o de referência, tensão \\(0V\\), e o nó δ com tensão \\(V_\delta = 5V\\)) do sistema de equações a resolver.
+
+</div>
+<div class="flex-image">
+
+<!-- _class: transparent -->
+![](img/exemplo-tensao-dos-nos-passo-2.png)
+
+</div>
+</div>
