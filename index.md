@@ -151,20 +151,21 @@ CEFET-MG DIGGDDV - Divinópolis, 2024.
 
 # Roteiro
 
-1. Definições, Terminações e Nomenclaturas
+1. Fontes, Linearidade, Sobreposição e Homogeneidade
+2. Definições, Terminações e Nomenclaturas
     1. Elementos
     2. Nós
     3. Malhas
     4. Tabela de Terminações e Nomenclaturas
-2. Lei de Kirchoff da Corrente
-3. Lei de Kirchoff da Tensão
+3. Lei de Kirchoff da Corrente
+4. Lei de Kirchoff da Tensão
 
 
 ---
 
 # Roteiro
 
-4. Análise de circuitos pelas Leis de Kirchoff da Corrente e da Tensão
+5. Análise de circuitos pelas Leis de Kirchoff da Corrente e da Tensão
     1. Método para modelagem de circuitos em Sistemas de Equações Lineares
     2. Representação dos Sistemas de Equações Lineares em Sua Forma Matricial
     3. Resolução dos Modelos de Circuitos em Equações Lineares por Sistemas Computacionais de Álgebra (CAS - sympy, numpy)
@@ -174,14 +175,97 @@ CEFET-MG DIGGDDV - Divinópolis, 2024.
 
 # Roteiro
 
-5. Método das Tensões nos Nós
-6. Método das Correntes de Malhas
-7. Instrumentos de medida de grandezas elétricas
+6. Método das Tensões nos Nós
+7. Método das Correntes de Malhas
+8. Instrumentos de medida de grandezas elétricas
     1. Voltímetro (Tensão)
     2. Amperímetro (Corrente)
     3. Ohmímetro (Resistência)
     4. Multímetro (Múltiplas Grandezas)
-8. Listas de Exercícios
+9. Listas de Exercícios
+
+
+---
+
+<!-- _class: lead -->
+
+# Fontes, Linearidade, Sobreposição e Homogeneidade
+
+
+---
+
+## Fontes
+
+<div class="grid-66-33">
+
+<div class="grid-element regular">
+
+- Fontes de tensão e corrente são ditas independentes quando não são influenciadas por qualquer outra corrente ou tensão no circuito. 
+    - Sua representação gráfica consiste em um circulo com os pólos positivo e negativo (quando se trata de uma fonte de tensão) ou um circulo com uma seta (quando se trata de uma fonte de corrente).
+
+- Quando os valores de uma fonte de tensão ou corrente são determinados por outra tensão ou corrente do circuito, então dizemos que estas fontes são dependentes.
+    - Na imagem da fonte dependente de tensão (corrente), verificamos que sua tensão \\(V_{s} = 3 V_{x}\\) (corrente \\(i_{s} = 3 V_{x}\\)) é dependente da tensão \\(V_{x} = 5V\\) presente entre os pontos \\(a\\) e \\(b\\) do circuito, onde \\(V_{x}\\) também corresponde à tensão da fonte de tensão independente do circuito.
+
+- A representação gráfica das fontes dependentes consistem em um losango contendo pólos \\(-\\) quando a fonte dependente fornece tensão \\(-\\) ou um losango contendo uma seta \\(-\\) quando a fonte dependente fornece corrente.
+
+
+</div>
+
+<div class="grid-element regular">
+
+<center>
+<figure>
+
+<!-- _class: transparent -->
+![](img/fonte-dependente-tensao.png)
+
+<figcaption>Circuito com fonte dependente de Tensão</figcaption>
+
+</figure>
+
+<figure>
+
+![](img/fonte-dependente-corrente.png)
+
+<figcaption>Circuito com fonte dependente de Corrente</figcaption>
+
+</figure>
+</center>
+
+</div>
+
+</div>
+
+
+---
+
+## Linearidade e Superposição
+
+<div class="normal" >
+
+- Toda função matemática é linear quando ela é FECHADA na adição (propriedade da aditividade - superposição) e na multiplicação por escalar (propriedade da homogeneidade - linearidade).
+    - FECHADA implica dizer que ao adicionar funções lineares ou multiplicar uma função linear por um valor escalar produzo outra função linear resultante (Conceitos oriundos da álgebra linear, não serão desenvolvidos a fundo por fugirem do escopo da disciplina).
+
+- A função da Lei de Ohm, representada por \\(V(t) = Ri(t)\\) é uma função linear (toda função linear é da forma \\(y = ax + b)\\).
+- Assim, pelos princípios da superposição e linearidade, circuitos elétricos resistivos (capacitivos e indutivos em situações específicas) são equivalentes a sistemas de equações lineares.
+    - Por isso, conseguimos resolver circuitos usando sistemas lineares.
+
+</div>
+
+
+---
+
+## Homogeneidade, Sobreposição e a Produção de Circuitos Equivalentes
+
+<div class="regular" >
+
+- A homogeneidade nos ajuda a atribuir arbitrariamente valores para elementos dos circuitos e, consequentemente, deduzir demais grandezas, por garantir que as multiplicações por valores escalares persistem a produzir elementos lineares.
+
+- A sobreposição de circuitos nos permite deduzir que a as grandezas de um elemento podem ser calculadas levando-se em consideração a contribuição individual de elementos de circuito sobre eles, pois, a propriedade da adição garante que a adição de funções lineares continua a produzir outra função linear.
+
+- Diante disso tudo, estes princípios nos permitem deduzir (e verificar) a existência de circuitos equivalentes, pois, ao garantirem que a sobreposição e homogeneidade produzem funções lineares, logo, formas distintas de se produzirem o mesmo circuito se equivalem, como será visto nas próximas aulas.
+
+</div>
 
 
 ---

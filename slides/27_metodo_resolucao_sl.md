@@ -1,25 +1,25 @@
 ## Algoritmo
 
-### Passo 7
+### Passo 4
 
 <div class="grid-50-50">
 
-<div class="grid-element small">
+<div class="grid-element regular">
 
-Agora, devemos fazer as equações das tensões nas malhas pelos princípios da LKT que preconizam que a soma das diferenças de potencial em uma malha é sempre nula. Existe um subalgoritmo deste passo para fazer a resolução que para cada malha do circuito determina que você:
+Ao aplicar o passo 4, identificamos 4 nós essenciais no circuito:
 
-1. Escolha um elemento da malha como elemento atual
-    - Na malha $M_{1}$, vamos escolher o elemento $R$.
-2. Escolha um sentido (horário ou anti-horário) para percorrer a malha a partir do elemento escolhido. Escolheremos o sentido horário.
+1. $N_{1}$ que conecta a fonte, o resistor $R$ desconhecido e o resistor de $9\Omega$;
+2. $N_{2}$ que conecta o resistor de $6\Omega$, o resistor de $5\Omega$ e o resistor de $10\Omega$;
+3. $N_{3}$ que conecta o resistor $R$ desconhecido, o resistor de $5\Omega$ e o resistor de $30\Omega$;
+4. $N_{4}$ que conecta a fonte, o resistor de $30\Omega$ e o resistor de $6\Omega$;
 
 </div>
 
 <div class="grid-element">
 
 <!-- _class: transparent -->
-![grid-img](./img/passo-5.png)
+![Identificação dos Nós](./img/passo-4.png)
 
 </div>
 
 </div>
-

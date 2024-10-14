@@ -1,41 +1,61 @@
-## Resolução do Circuito
+## Circuito com Fonte de Tensão e Fonte de Corrente
 
-Resolvendo o sistema linear do circuito obtemos:
+<div class="grid-50-50">
 
-<div class="grid-50-50 normal">
+<div class="grid-element small">
 
-<div class="grid-element">
+### Passo 9
 
-$$
-\begin{align}
-    &V_a = 16.00V\\
-    &V_b = 24.00V\\
-    &V_c = 8.00V\\
-    &V_d = 30.00V\\
-    &V_e = 50.00V\\
-    &V_f = 48.00V\\
-    &V_g = 152.00V\\
-    &V_h = -24.00V\\
-    &V_i = 72.00V\\
-\end{align}
-$$
+A partir das equações de corrente obtidas em 6, 7 e 8, se você seguiu o método corretamente, você produziu um modelo matemático adequado para o comportamento de circuito e ele pode ser resolvido através de sistemas lineares. IMPORTANTE: o número de equações obtidas deve ser igual ao número de incógnitas (valores desconhecidos) que representam os elementos do circuito.
 
-</div>
+#### Equações
+
+Como $i_{0} = 4A$ da esquerda para direita, mas, estamos considerando seu sentido da direita para esquerda, então, para fins de resolução, consideramos $i_{0}$ como $-4A$ na LKC e na LKT, pois, não faz diferença na lei de Ohm (Ver [Slide 41](#41))
+
+<div class="grid-50-50">
 
 <div class="grid-element">
 
 $$
 \begin{align}
-    &i_1 = 2.00A\\
-    &i_2 = -6.00A\\
-    &i_3 = 3.00A\\
-    &i_4 = -9.00A\\
-    &i_5 = 5.00A\\
+&V_{a} - 8 i_{1} &= &0 \\
+&V_{b} - 12 i_{1} &= &0 \\
+&V_{c} - 4 i_{1} &= &0 \\
+&V_{d} - 6 i_{5} &= &0 \\
+&V_{e} - 10 i_{5} &= &0 \\
+&V_{f} &= &48^{1} \\
+&V_{h} - 4 i_{2} &= &0
 \end{align}
 $$
 
 </div>
+<div class="grid-element">
 
-Logo, a corrente $i_{4}$ gerada pela fonte de corrente é de $-9 A$.
+$$
+\begin{align}
+&V_{i} - 24 i_{3} &= 0 \\
+&i_{1} + i_{2} &= -4 \\
+&i_{2} - i_{3} - i_{4} &= 0 \\
+&i_{5} - i_{1} - i_{3} &= 0 \\
+& 80 -4 i_{2} - V_{g} - (12 \cdot -4) &= 0 \rightarrow \\
+& \therefore -4 i_{2} - V_{g} &= -128 \\
+& -24 i_{3} - 16 i_{5} + V_{g} &= 0 \\
+& -24 i_{1} + 24 i_{3} + 4 i_{2} &= 0
+\end{align}
+$$
+
+</div>
+</div>
+
+</div>
+
+<div class="grid-element small" style="margin: auto;">
+
+<!-- _class: transparent -->
+![](./img/circuito_2_5.png)
+
+14 variáveis desconhecidas: $[V_{a}, V_{b}, V_{c}, V_{d}, V_{e}, V_{f}, V_{g}, V_{h}, V_{i}, i_{1}, i_{2}, i_{3}, i_{4}, i_{5}]$ e 14 equações para estas variáveis, logo, é possível resolver este circuito através de um sistema linear.
+
+</div>
 
 </div>

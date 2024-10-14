@@ -1,26 +1,19 @@
-## Algoritmo
-
-### Passo 2
+## Método para determinação do sentido das correntes e das equações de malha para a obtenção de equações lineares que resolvem um circuito resistivo.
 
 <div class="grid-50-50">
 
-<div class="grid-element">
+<div class="grid-element normal">
 
-Ao aplicar o passo 2, arbitramos 6 correntes às resistências e às fontes do circuito:
+- Como resolver o circuito ao lado, em função de $R$ e depois, descobrir o valor de $R$ sabendo que uma corrente de $3A$ passa pelo resistor de $9\Omega$?
 
-1. $i_{0}$ na fonte
-2. $i_{1}$ nos resistores de $9\Omega$ e $6\Omega$
-3. $i_{2}$ em $R$
-4. $i_{3}$ no resistor de $5\Omega$
-5. $i_{4}$ no resistor de $30 \Omega$
-6. $i_{5}$ nos resistores de $10\Omega$ e $6\Omega$.
+- Através do Algoritmo explicado nos próximos slides!
 
 </div>
 
 <div class="grid-element">
 
 <!-- _class: transparent -->
-![Identificação dos Nós](./img/passo-2.png)
+![](./img/circuito_sem_anotacoes.png)
 
 </div>
 

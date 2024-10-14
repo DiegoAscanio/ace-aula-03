@@ -2,59 +2,20 @@
 
 <div class="grid-50-50">
 
-<div class="grid-element small">
+<div class="grid-element normal">
 
-### Passo 9
+### Passo 5
 
-A partir das equações de corrente obtidas em 6, 7 e 8, se você seguiu o método corretamente, você produziu um modelo matemático adequado para o comportamento de circuito e ele pode ser resolvido através de sistemas lineares. IMPORTANTE: o número de equações obtidas deve ser igual ao número de incógnitas (valores desconhecidos) que representam os elementos do circuito.
+Determine quais são as malhas (Caminhos (laços) cujos nó inicial e final se coincidem sem englobar nenhum outro laço) do circuito.
 
-#### Equações
-
-Como $i_{0} = 4A$ da esquerda para direita, mas, estamos considerando seu sentido da direita para esquerda, então, para fins de resolução, consideramos $i_{0}$ como $-4A$ na LKC e na LKT, pois, não faz diferença na lei de Ohm (Ver [Slide 41](#41))
-
-<div class="grid-50-50">
-
-<div class="grid-element">
-
-$$
-\begin{align}
-&V_{a} - 8 i_{1} &= &0 \\
-&V_{b} - 12 i_{1} &= &0 \\
-&V_{c} - 4 i_{1} &= &0 \\
-&V_{d} - 6 i_{5} &= &0 \\
-&V_{e} - 10 i_{5} &= &0 \\
-&V_{f} &= &48^{1} \\
-&V_{h} - 4 i_{2} &= &0
-\end{align}
-$$
-
-</div>
-<div class="grid-element">
-
-$$
-\begin{align}
-&V_{i} - 24 i_{3} &= 0 \\
-&i_{1} + i_{2} &= -4 \\
-&i_{2} - i_{3} - i_{4} &= 0 \\
-&i_{5} - i_{1} - i_{3} &= 0 \\
-& 80 -4 i_{2} - V_{g} - (12 \cdot -4) &= 0 \rightarrow \\
-& \therefore -4 i_{2} - V_{g} &= -128 \\
-& -24 i_{3} - 16 i_{5} + V_{g} &= 0 \\
-& -24 i_{1} + 24 i_{3} + 4 i_{2} &= 0
-\end{align}
-$$
-
-</div>
-</div>
+No nosso circuito são as malhas $M_{1}, M_{2} \text{ e } M_{3}$
 
 </div>
 
-<div class="grid-element small" style="margin: auto;">
+<div class="grid-element normal" style="margin: auto;">
 
 <!-- _class: transparent -->
 ![](./img/circuito_2_5.png)
-
-14 variáveis desconhecidas: $[V_{a}, V_{b}, V_{c}, V_{d}, V_{e}, V_{f}, V_{g}, V_{h}, V_{i}, i_{1}, i_{2}, i_{3}, i_{4}, i_{5}]$ e 14 equações para estas variáveis, logo, é possível resolver este circuito através de um sistema linear.
 
 </div>
 

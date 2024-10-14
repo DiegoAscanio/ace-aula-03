@@ -1,25 +1,13 @@
-## Algoritmo
+## Algoritmo para resolução de circuitos pela lei de Kirchhoff (passo-a-passo) 
+<div class="regular">
 
-### Passo 4
+7. Escreva as diferenças de potencial existentes em uma malha levando em consideração a lei de kirchoff da tensão, que estabelece que a soma das diferenças de potencial dos elementos de uma malha é igual a zero.
+    - Aqui a sinalização dos pontos onde ocorrem quedas de pontecial nos resistores será essencial, pois:
+        - Se em um ponto da malha, o caminho da malha se mover de um ponto de menor tensão (-) para um ponto de maior tensão (+) em um resistor, você deve considerar um aumento de tensão nesse caminho. 
+        - Se o caminho se mover de um ponto de maior tensão para um ponto de menor tensão, você deve considerar um decréscimo de tensão no caminho da malha.
+8. Escreva equações da lei de Ohm (V = Ri) para cada resistor do circuito.
+9. A partir das equações de corrente obtidas em 6, 7 e 8, se você seguiu o método corretamente, você produziu um modelo matemático adequado para o comportamento de circuito e ele pode ser resolvido através de sistemas lineares. IMPORTANTE: o número de equações obtidas deve ser igual ao número de incógnitas (valores desconhecidos) que representam os elementos do circuito.
 
-<div class="grid-50-50">
-
-<div class="grid-element regular">
-
-Ao aplicar o passo 4, identificamos 4 nós essenciais no circuito:
-
-1. $N_{1}$ que conecta a fonte, o resistor $R$ desconhecido e o resistor de $9\Omega$;
-2. $N_{2}$ que conecta o resistor de $6\Omega$, o resistor de $5\Omega$ e o resistor de $10\Omega$;
-3. $N_{3}$ que conecta o resistor $R$ desconhecido, o resistor de $5\Omega$ e o resistor de $30\Omega$;
-4. $N_{4}$ que conecta a fonte, o resistor de $30\Omega$ e o resistor de $6\Omega$;
-
-</div>
-
-<div class="grid-element">
-
-<!-- _class: transparent -->
-![Identificação dos Nós](./img/passo-4.png)
-
-</div>
+**Lembrando: Não adianta sua matemática estar correta se seu modelo estiver errado!**
 
 </div>

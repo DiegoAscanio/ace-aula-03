@@ -4,18 +4,16 @@
 
 <div class="grid-element normal">
 
-### Passo 5
+### Passo 1
 
-Determine quais são as malhas (Caminhos (laços) cujos nó inicial e final se coincidem sem englobar nenhum outro laço) do circuito.
-
-No nosso circuito são as malhas $M_{1}, M_{2} \text{ e } M_{3}$
+Determine quais são os elementos (resistores e fontes) do circuito e identifique-os;
 
 </div>
 
 <div class="grid-element normal" style="margin: auto;">
 
 <!-- _class: transparent -->
-![](./img/circuito_2_5.png)
+![](./img/circuito_2_1.png)
 
 </div>
 

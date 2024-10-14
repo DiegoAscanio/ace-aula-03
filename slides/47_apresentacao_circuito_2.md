@@ -4,46 +4,18 @@
 
 <div class="grid-element normal">
 
-### Passo 8
+### Passo 4
 
-Escreva equações da lei de Ohm (V = Ri) para cada resistor do circuito.
+Determine quais são os nós essenciais do circuito (ponto onde três ou mais elementos se juntam).
 
-<div class="grid-50-50 regular">
-
-<div class="grid-element">
-
-$$
-\begin{align}
-    V_{R_{1}} &= V_{a} = 8 \cdot i_{1} \\
-    V_{R_{2}} &= V_{b} = 12 \cdot i_{1} \\
-    V_{R_{3}} &= V_{c} = 4 \cdot i_{1} \\
-    V_{R_{4}} &= V_{i} = 24 \cdot i_{3} \\
-\end{align}
-$$
-
-</div>
-
-<div class="grid-element">
-
-$$
-\begin{align}
-    V_{R_{5}} &= V_{d} = 6 \cdot i_{5} \\
-    V_{R_{6}} &= V_{e} = 10 \cdot i_{5} \\
-    V_{R_{7}} &= V_{f} = 12 \cdot i_{0} \\
-    V_{R_{8}} &= V_{h} = 4 \cdot i_{2} \\
-\end{align}
-$$
-
-</div>
-
-</div>
+No nosso circuito são os nós $N_{\alpha}, N_{\beta}, N_{\gamma} \text{ e } N_{\delta}$
 
 </div>
 
 <div class="grid-element normal" style="margin: auto;">
 
 <!-- _class: transparent -->
-![](./img/circuito_2_5.png)
+![](./img/circuito_2_4.png)
 
 </div>
 

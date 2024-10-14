@@ -4,18 +4,16 @@
 
 <div class="grid-element normal">
 
-### Passo 4
+Como descobrir a corrente fornecida pela fonte de corrente do circuito quando a corrente que passa no resistor de $12 \Omega$ (conectado ao polo negativo da fonte de tensão de $80V$) é de $4A$ entrando pela esquerda e saindo à direita do resistor?
 
-Determine quais são os nós essenciais do circuito (ponto onde três ou mais elementos se juntam).
-
-No nosso circuito são os nós $N_{\alpha}, N_{\beta}, N_{\gamma} \text{ e } N_{\delta}$
+- Aplicando o algoritmo!
 
 </div>
 
 <div class="grid-element normal" style="margin: auto;">
 
 <!-- _class: transparent -->
-![](./img/circuito_2_4.png)
+![](./img/circuito_2.png)
 
 </div>
 

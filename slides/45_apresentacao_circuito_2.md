@@ -2,29 +2,26 @@
 
 <div class="grid-50-50">
 
-<div class="grid-element normal">
+<div class="grid-element small">
 
-### Passo 6
+### Passo 2
 
-Levando em conta a lei de Kirchhoff da corrente, que afirma que a soma das correntes entrando em um nó é igual àquelas que saem, identifique o comportamento das correntes nos nós:
+Atribua uma corrente (arbitrando sua direção) em cada elemento. Elementos no mesmo ramo (em série entre dois nós) devem ser atribuídos à mesma corrente. Não se esqueça de atribuir correntes às fontes de tensão.
 
-- Em $N_{\alpha}$: $i_{0} = i_{1} + i_{2}$
-- Em $N_{\beta}$: $i_{2} = i_{3} + i_{4}$
-- Em $N_{\gamma}$: $i_{5} = i_{1} + i_{3}$
-- Em $N_{\delta}$: $i_{0} = i_{4} + i_{5}$
+**MUITO, MUITO, MUITO IMPORTANTE:**
 
-<div class="footnotesize">
+Sabemos, pelo enunciado do problema, que a corrente $i_{0}$ vale $4A$ quando entra pela esquerda e sai a direita do resistor de $12 \Omega$.
 
-Como um dos nós é combinação linear dos demais, escolhemos arbitrariamente $N_{\delta}$ para ser desprezado na montagem das equações de resolução do circuito.
-
-</div>
+1. É possível arbitrar qualquer sentido de circulação da corrente! 
+2. Arbitramos, para melhorar nossa visualização do circuito, que a corrente $i_{0}$ entra da direita para a esquerda no resistor $R_{7}$ (e na fonte).
+    1. Como isso é contrário ao previamente estabelecido, então, a corrente $i_{0}$ no sentido de entrada da direita para a esquerda vale o simétrico (o contrário: $-4A$) do sentido da esquerda para a direita. Desta forma, porque arbitrei $i_{0}$ entrando da direita para a esquerda, mas, sabendo que $i_{0}$ entra originalmente da esquerda para a direita em $R_{7}$, então, quando eu for formular as equações, devo considerar o valor de $i_{0}$ como $-4A$!
 
 </div>
 
 <div class="grid-element normal" style="margin: auto;">
 
 <!-- _class: transparent -->
-![](./img/circuito_2_5.png)
+![](./img/circuito_2_2.png)
 
 </div>
 

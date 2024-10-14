@@ -1,19 +1,21 @@
 ## Algoritmo
 
-### Passo 5
+### Passo 1
 
 <div class="grid-50-50">
 
-<div class="grid-element">
+<div class="grid-element normal">
 
-Ao aplicar o passo 5, identificamos apenas três laços que não contém outros laços em seu interior e que, por isso, são malhas: $M_{1}$, $M_{2}$ e $M_{3}$ (sinalizados em azul):
+Considerando o circuito da figura, queremos resolvê-lo calculando o valor de todas as correntes de seus componentes em função do resistor de valor desconhecido $R$. **Para resolver o circuito ao final do algoritmo, bem como encontrar o valor de $R$, sabemos que no resistor de $9 \Omega$ passa uma corrente de $3A$.**
+
+Ao aplicar o passo 1 do algoritmo, os resistores identificados encontram-se contornados por linhas vermelhas e a fonte identificada por uma linha laranja:
 
 </div>
 
 <div class="grid-element">
 
 <!-- _class: transparent -->
-![Identificação dos Nós](./img/passo-5.png)
+![Circuito Original](./img/circuito_original.png)
 
 </div>
 
