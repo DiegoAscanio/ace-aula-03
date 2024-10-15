@@ -1916,24 +1916,39 @@ Escolhemos como nó de referência o nó α por ele permitir deduzir de imediato
       justify-content: space-between;
     }
     .flex-paragraph {
-        flex: 1;
+        flex: 3;
         margn-right: 10px;
-        font-size: 18pt;
         text-align: justify;
     }
     .flex-image {
         flex: 2;
     }
+    li, p {
+        font-size: 12pt;
+    }
 </style>
 
-## Método das Tensões dos Nós - Passo 3 - Escolha do Nó de Referência
+## Método das Tensões dos Nós - Passo 3 - Atribuição de Tensões a Todos os Nós em Relação ao nó de referência.
 
 <div class="flex-container">
 <div class="flex-paragraph">
 
-Passo 2 - Escolha do nó de referência
+3. Atribuir tensões a todos os outros nós em relação ao nó de referência;
+    - Se forem nós cujos caminhos ao nó de referência possuam apenas fontes de tensão, a tensão é conhecida e deve ser atribuída como tensão do nó o valor da(s) fonte(s) de tensão conhecidas;
+    - Senão, atribuir uma variável de tensão ao nó — exemplo: \\(V\_k\\) para o nó de nome \\(k\\).
 
-Escolhemos como nó de referência o nó α por ele permitir deduzir de imediato a tensão nodal do nó δ — \\(V_\delta = 5V\\) — elminando desta forma duas equações de dois nós (o de referência, tensão \\(0V\\), e o nó δ com tensão \\(V_\delta = 5V\\)) do sistema de equações a resolver.
+O nó de referência está sempre conectado ao terra e portanto, sua tensão é sempre \\(V_\alpha = 0V\\).
+
+No nosso exemplo, apenas um nó possui caminho com apenas fonte(s) de tensão, o nó δ que está conectado ao nó α por uma fonte de tensão de 5V. 
+
+Saindo de α até δ temos que: \\(V_\alpha + 5 = V_\delta \implies 0 + 5 = V_\delta \therefore V_\delta = 5V \\)
+
+Os outros dois nós, β e γ, têm tensões desconhecidas, portanto atribuo a eles as tensões \\(V_\beta\\) e \\(V_\gamma\\), respectivamente. Logo, todas as tensões de nó são:
+
+- Nó α: \\(V_\alpha = 0V\\)
+- Nó β: \\(V_\beta\\)
+- Nó γ: \\(V_\gamma\\)
+- Nó δ: \\(V_\delta = 5V\\)
 
 </div>
 <div class="flex-image">
@@ -1943,3 +1958,210 @@ Escolhemos como nó de referência o nó α por ele permitir deduzir de imediato
 
 </div>
 </div>
+
+
+---
+
+<style scoped>
+    img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 2;
+        margin-right: 10px;
+        text-align: justify;
+    }
+    .flex-column {
+        flex: 1;
+        margin-right: 10px;
+    }
+    .flex-image {
+        flex: 2;
+    }
+    li, p, table {
+        font-size: 12pt;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+## Método das Tensões dos Nós - Passo 4
+
+<div class="flex-container">
+<div class="flex-paragraph">
+
+4. Atribuir correntes (sentidos arbitrários) para todos os elementos do circuito (fontes e resistores, por hora) e quando possível, escrever tais correntes em função das tensões que entram e que saem destes elementos (apenas nos resistores no caso) a partir da lei de Ohm que especifica que \\(i\_{ab} = \frac{v\_{ab}}{R\_{ab}} = \frac{V\_a - V\_b}{R\_{ab}} \\).
+
+Correntes atribuídas, seus sentidos e sua forma em função das tensões de nós, quando possível:
+
+<div class="flex-container">
+<div class="flex-column">
+
+|   Corrente   |              Sentido              |                        Forma em função<br/>das<br/>tensões de nós                        |
+| :----------: | :-------------------------------: | :--------------------------------------------------------------------------------------: |
+|   \\(I\\)    | \\( \alpha \rightarrow \delta \\) |                                      Não é possível                                      |
+| \\(i\_{1}\\) | \\( \alpha \rightarrow \beta \\)  | \\(i\_{1} = \frac{V\_{\alpha} - V\_{\beta}}{4 \Omega} = \frac{- V\_{\beta}}{4 \Omega}\\) |
+| \\(i\_{2}\\) | \\( \beta \rightarrow \gamma \\)  |                 \\(i\_{2} = \frac{V\_{\beta} - V\_{\gamma}}{3 \Omega}\\)                 |
+
+</div>
+<div class="flex-column">
+
+|   Corrente   |              Sentido              |                              Forma em função<br/>das<br/>tensões de nós                               |
+| :----------: | :-------------------------------: | :---------------------------------------------------------------------------------------------------: |
+| \\(i\_{3}\\) | \\( \gamma \rightarrow \beta \\)  |                       \\(i\_{3} = \frac{V\_{\gamma} - V\_{\beta}}{6 \Omega}\\)                        |
+| \\(i\_{4}\\) | \\( \delta \rightarrow \beta \\)  |      \\(i\_{4} = \frac{V\_{\delta} - V\_{\beta}}{7 \Omega} = \frac{5 - V\_{\beta}}{7 \Omega} \\)      |
+| \\(i\_{5}\\) | \\( \gamma \rightarrow \delta \\) | \\(i\_{5} = \frac{V\_{\gamma} + 9 - V\_{\delta}}{8 \Omega} \therefore \\) <br> \\( i\_{5} = \frac{V\_{\gamma} + 9 - 5}{8 \Omega} = \frac{V\_{\gamma} + 4}{8 \Omega} \\) |
+
+</div>
+</div>
+</div>
+<div class="flex-image">
+
+<!-- _class: transparent -->
+
+![](img/exemplo-tensao-dos-nos-passo-4.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 2;
+        margin-right: 10px;
+        text-align: justify;
+    }
+    .flex-column {
+        flex: 1;
+        margin-right: 10px;
+    }
+    .flex-image {
+        flex: 2;
+    }
+    li, p, table {
+        font-size: 12pt;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+## Método das Tensões dos Nós - Passo 5
+
+<div class="flex-container">
+<div class="flex-paragraph">
+
+Para cada um dos nós cujas tensões sejam desconhecidas:
+
+-   Escrever a LKC para o nó em questão, considerando as correntes que entram e que saem do nó em função das tensões nodais desconhecidas, quando aplicável, e em função das correntes oriundas de fontes de corrente e das correntes oriundas de fontes de tensão, também quando aplicável. No caso, temos os nós β e γ com tensões desconhecidas.
+
+| Nó  |           Correntes que entram         | Correntes que saem | LKC com correntes<br/>em função das tensões nodais<br/>(Quando Aplicável) |
+| :-: | :------------------------------------: | :----------------: | :-----------------------------------------------------------------------: |
+|  β  | \\( 2A, i\_1, i\_3 \text{ e } i\_4 \\) |   \\( i\_2 \\)     | \\( 2 - \frac{V\_{\beta}}{4} + \frac{V\_{\gamma} - V\_{\beta}}{6} + \frac{5 - V\_{\beta}}{7} = \frac{V\_{\beta} -  V\_{\gamma}}{3} \\) |
+|  γ  | \\( i\_2 \\) |   \\( i\_3 \text{ e } i\_5 \\)  | \\( \frac{V\_{\beta} -  V\_{\gamma}}{3} = \frac{V\_{\gamma} - V\_{\beta}}{6} + \frac{V\_{\gamma} + 4}{8} \\) |
+
+Vemos que apenas duas variáveis são desconhecidas, \\( V\_{\beta} \\) e \\( V\_{\gamma} \\), e que temos duas equações. Assim, podemos resolver o sistema de equações para encontrar as tensões nodais desconhecidas.
+
+</div>
+<div class="flex-image">
+
+<!-- _class: transparent -->
+
+![](img/exemplo-tensao-dos-nos-passo-4.png)
+
+</div>
+</div>
+
+
+---
+
+<!-- _class: lead -->
+## Método das Tensões dos Nós - Passo 6
+
+<iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=metodo-tensao-dos-nos.ipynb" width=100% height=100%></iframe>
+
+
+---
+
+<style scoped>
+    img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 2;
+        margin-right: 10px;
+        text-align: justify;
+    }
+    .flex-column {
+        flex: 1;
+        margin-right: 10px;
+    }
+    .flex-image {
+        flex: 2;
+    }
+    li, p, table {
+        font-size: 16pt;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h3 {
+        text-align: center;
+    }
+</style>
+
+## Método das Tensões dos Nós - Conclusões
+
+<div class="flex-container">
+<div class="flex-column">
+
+### Vantagens
+
+- Reduz o número de equações a serem resolvidas;
+- Facilita a visualização do comportamento da estrutura;
+- Elimina a necessidade de se lidar com a LKT nas malhas.
+
+</div>
+<div class="flex-column">
+
+### Desvantagens
+
+- Sobrecarga cognitiva nas operações de montagem das equações, o que facilita a ocorrência de erros de desatenção por esquecimento de termos ou sinais;
+    - Porque usando LKC nos nós, LKT nas malhas e Lei de Ohm, a montagem das equações é mais simples e direta;
+
+</div>
+</div>
+
+### Exercício
+
+Resolva o circuito anterior pelo método tradicional e aponte a quantidade de equações que o método das tensões dos nós eliminou.

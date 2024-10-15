@@ -1,0 +1,35 @@
+
+
+>>>User:
+
+```markdown
+frac{V\_{\beta}}{4} + \frac{V\_{\g
+```
+algorithm to find the minimum common multiple
+
+>>>Assistant:
+To find the minimum common multiple of two numbers, you can use the following algorithm:
+
+1. Find the greatest common divisor (GCD) of the two numbers using the Euclidean algorithm.
+2. Multiply the two numbers together.
+3. Divide the product of the two numbers by the GCD to get the minimum common multiple.
+
+Here is a simple implementation of the algorithm in Python:
+
+```python
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+# Example usage
+num1 = 12
+num2 = 18
+result = lcm(num1, num2)
+print(f"The minimum common multiple of {num1} and {num2} is: {result}")
+```
+
+You can replace `num1` and `num2` with the numbers you want to find the minimum common multiple of.
