@@ -1,0 +1,94 @@
+
+\documentclass{standalone}
+\usepackage[oldvoltagedirection]{circuitikz}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{circuitikz}[american voltages]
+  % outer loop
+  \draw
+  node[ocirc] (A) at (0,4) {}
+  node[ocirc] (B) at (4,4) {}
+  node[ocirc] (C) at (8,4) {}
+  node[ocirc] (D) at (4,0) {}
+  (D) to[short, *-] (0,0)
+  (0,0) to [V, v=$50\,\mathrm{V}$] (A)
+  (A) to[short, *-] (0,8)
+  (0,8) to [R, l=$1\,\Omega$] (8,8)
+  (8,8) to[short, -*] (C)
+  (C) to[cV, v=$15\,i_\phi$, invert] (8,0)
+  (8,0) to[short, -*] (D)
+  % 5 Ohm resistor to B node
+  (A) to[R, -*, l=$5\,\Omega$] (B)
+  % B node to D node through 20 Ohm resistor with i_phi current
+  (B) to[R, l=$20\,\Omega$, i>^=$i_\phi$] (D)
+  % 4 Ohm resitor from B to C
+  (B) to[R, l=$4\,\Omega$] (C)
+  % Identificador da Malha 1
+  % circulo
+  [->, thick] (1.5, 2) arc[start angle = 180, end angle = -90, radius = 0.5];
+  \draw
+  % rotulo
+  node [] (M_1) at (2, 2) {$M_1$}
+  % corrente da Malha
+  node [] (i_M_1) at (2, 1) {$\overset{\leftarrow}{i_1}$};
+  % Identificador da Malha 2
+  % circulo
+  \draw 
+  [->, thick] (3.5, 6) arc[start angle = 180, end angle = -90, radius = 0.5]
+  % rotulo
+  node [] (M_2) at (4, 6) {$M_2$}
+  % corrente da Malha
+  node [] (i_M_2) at (4, 5) {$\overset{\leftarrow}{i_2}$};
+  % Identificador da Malha 3
+  % circulo
+  \draw 
+  [->, thick] (5.5, 2) arc[start angle = 180, end angle = -90, radius = 0.5]
+  % rotulo
+  node [] (M_3) at (6, 2) {$M_3$}
+  % corrente da Malha
+  node [] (i_M_3) at (6, 1) {$\overset{\leftarrow}{i_3}$};
+
+  % corrente dos resistores
+  % corrente do R 1 Ohm
+  \draw
+  node [] (i_1_ohm) at (4, 7) {$i_{1\Omega} = i_2$}
+  % seta acima da corrente da esquerda pra direita
+  [->, thick] (3, 7.25) -- (5, 7.25)
+  % simbolo positivo no começo da seta
+  node [] (pos_i_1_ohm) at (3.25, 7.5) {$+$}
+  % simbolo negativo no final da seta
+  node [] (neg_i_1_ohm) at (4.75, 7.5) {$-$};
+
+  % corrente do R 5 Ohm
+  \draw
+  node [] (i_5_ohm) at (2.5, 5) {$i_{5\Omega} = i_1 - i_2$}
+  % seta acima da corrente da esquerda pra direita
+  [->, thick] (1.5, 5.25) -- (3.5, 5.25)
+  % simbolo positivo no começo da seta
+  node [] (pos_i_5_ohm) at (1.75, 5.5) {$+$}
+  % simbolo negativo no final da seta
+  node [] (neg_i_5_ohm) at (3.25, 5.5) {$-$};
+
+  % corrente do R 4 Ohm
+  \draw
+  node [] (i_4_ohm) at (5.5, 5) {$i_{4\Omega} = i_2 - i_3$}
+  % seta acima da corrente da esquerda pra direita
+  [<-, thick] (4.45, 5.25) -- (6.5, 5.25)
+  % simbolo positivo no começo da seta
+  node [] (pos_i_4_ohm) at (6.25, 5.5) {$+$}
+  % simbolo negativo no final da seta
+  node [] (neg_i_4_ohm) at (4.7, 5.5) {$-$};
+
+  % corrente do R 20 Ohm
+  \draw
+  node [rotate=270] (i_20_ohm) at (3.25, 2) {$i_{20\Omega} = i_{\phi} = i_1 - i_3$}
+  % seta acima da corrente, de cima para baixo
+  [->, thick] (3.5, 3.5) -- (3.5, 0.5)
+  % simbolo positivo no começo da seta
+  node [] (pos_i_20_ohm) at (3.75, 3.25) {$+$}
+  % simbolo negativo no final da seta
+  node [rotate=90] (neg_i_20_ohm) at (3.75, 0.75) {$-$};
+
+\end{circuitikz}
+\end{document}

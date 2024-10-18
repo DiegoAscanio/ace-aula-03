@@ -1,0 +1,27 @@
+
+\documentclass{standalone}
+\usepackage[oldvoltagedirection]{circuitikz}
+
+\begin{document}
+\begin{circuitikz}[american voltages]
+  % outer loop
+  \draw
+  node[ocirc] (A) at (0,4) {}
+  node[ocirc] (B) at (4,4) {}
+  node[ocirc] (C) at (8,4) {}
+  node[ocirc] (D) at (4,0) {}
+  (D) to[short, *-] (0,0)
+  (0,0) to [V, v=$50\,\mathrm{V}$] (A)
+  (A) to[short, *-] (0,6)
+  (0,6) to [R, l=$1\,\Omega$] (8,6)
+  (8,6) to[short, -*] (C)
+  (C) to[cV, v=$15\,i_\phi$, invert] (8,0)
+  (8,0) to[short, -*] (D)
+  % 5 Ohm resistor to B node
+  (A) to[R, -*, l=$5\,\Omega$] (B)
+  % B node to D node through 20 Ohm resistor with i_phi current
+  (B) to[R, l=$20\,\Omega$, i>^=$i_\phi$] (D)
+  % 4 Ohm resitor from B to C
+  (B) to[R, l=$4\,\Omega$] (C);
+\end{circuitikz}
+\end{document}

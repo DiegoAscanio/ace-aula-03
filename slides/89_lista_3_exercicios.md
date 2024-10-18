@@ -4,9 +4,9 @@
 
 <div class="grid-element regular">
 
-Problemas 2.18 ao 2.26 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
+Problemas 2.18 ao 2.26 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel e exercícios — somente os exercícios com respostas para conferência no final do livro — do capítulo 4, seções 4.1 a 4.8 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
 
-### Respostas dos Exercícios Pares (para conferência)
+### Respostas dos Exercícios Pares do capítulo 2 (para conferência)
 
 2.18
 - a) $i_{a} = 2A, i_{b} = 0.5A, i_{g} = 2.5A$

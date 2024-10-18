@@ -1749,7 +1749,7 @@ Ao permitir analisar correntes em funções das tensões dos nós, as equações
     }
 </style>
 
-## Método da Tensão nos Nós — Exemplo e Algortimo
+## Método da Tensão nos Nós — Exemplo e Algoritmo
 
 O cerne do método das tensões dos nós está em encontrar as diferenças de potencial nos nós de um circuito em relação ao nó de referência e a partir destas tensões, especificar as correntes que transitam pelos nós do circuito em função de tal tensão. Portanto, o método pode ser sistematizado em 6 passos:
 
@@ -1771,7 +1771,7 @@ O cerne do método das tensões dos nós está em encontrar as diferenças de po
     }
 </style>
 
-## Método da Tensão nos Nós — Exemplo e Algortimo
+## Método da Tensão nos Nós — Exemplo e Algoritmo
 
 O cerne do método das tensões dos nós está em encontrar as diferenças de potencial nos nós de um circuito em relação ao nó de referência e a partir destas tensões, especificar as correntes que transitam pelos nós do circuito em função de tal tensão. Portanto, o método pode ser sistematizado em 6 passos:
 
@@ -2165,3 +2165,970 @@ Vemos que apenas duas variáveis são desconhecidas, \\( V\_{\beta} \\) e \\( V\
 ### Exercício
 
 Resolva o circuito anterior pelo método tradicional e aponte a quantidade de equações que o método das tensões dos nós eliminou.
+
+
+---
+
+<!-- _class: lead -->
+## Método das Tensões dos Nós - Fontes Dependentes
+
+<iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=metodo-tensao-dos-nos-fonte-dependente.ipynb" width=100% height=100%></iframe>
+
+
+---
+
+<!-- _class: lead -->
+
+# Método das Correntes das Malhas
+
+
+---
+
+<style scoped>
+    p {
+        text-align: justify;
+        font-size: 20px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas
+
+É um método para análise (e solução) de circuitos elétricos que busca a descoberta de grandezas desconhecidas dos elementos (ex. correntes e tensões) à partir de correntes elétricas compostas existentes em malhas — caminhos fechados que não contém outros camnhos fechados dentro de si — de um circuito elétrico.
+
+É desejável porque simplifica a solução de circuitos — em comparação às leis de kirchoff da corrente nos nós e da tensão nas malhas — ao permitir que a lei de kirchoff das tensões nas malhas nós seja escrita em função das correntes que transistam nas malhas.
+
+### Fundamentos
+
+Considerando a LKT nas malhas que estabelece que a soma algébrica das diferenças de potencial elétrico em uma malha é igual a zero e a lei de Ohm que estabelece que a tensão elétrica em um resistor é igual ao produto da resistência pelo valor da corrente que o atravessa \\((V = R \cdot I)\\), conseguimos, portanto, escrever a LKT nas malhas em função das correntes que transitam nas malhas — implicitando as equações da LKC nos nós — e, assim, diminuir a quantidade de equações a serem resolvidas para solucionar o circuito.
+
+<div class="flex-container">
+<div class="left-element">
+</div>
+<div class="right-element">
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    p, li {
+        text-align: justify;
+        font-size: 18px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas
+
+### Algoritmo
+
+<div class="flex-container">
+<div class="flex-column">
+
+1. Identifique as \\(M\\) malhas do circuito, enumere-as e atribua uma corrente de malha \\(i\_k | k = 1 \ldots M \\) — com sentido arbitrário — a cada uma delas;
+2. Para cada resistor \\(R\\) dos \\(N\\) resistores do circuito, escreva sua corrente \\(i\_{R\_j} | j = 1 \ldots N \\) em função das correntes de malha que transitam sobre ele. Seus sentidos também são arbitrários, por isso, considere a tensão no ponto de entrada da corrente no resistor \\(i\_{R\_j}\\\) maior que a tensão no ponto de saída; Atribua um sinal de positivo no ponto da entrada da corrente e um sinal de negativo no ponto de saída;
+
+</div>
+<div class="flex-column">
+
+3. Para cada malha do circuito escreva LKT considerando em cada malha:
+    - As quedas (ou elevações) de tensão causadas pelo trânsito das correntes nos resistores;
+    - As quedas (ou elevações) de tensão causadas pelas fontes de tensão;
+    - As quedas (ou elevações) de tensão causadas pelas fontes de corrente;
+4. Simplifique até quando possível as equações obtidas, construa um sistema de equações lineares e resolva-o para encontrar as grandezas incógnitas do circuito.
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    p, li {
+        text-align: justify;
+        font-size: 24px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Exemplo
+
+<div class="flex-container">
+<div class="flex-column">
+
+Através do método das correntes da malha, determine a potência dissipada pelo resistor de $4\Omega$.
+
+</div>
+<div class="flex-column">
+
+<!-- _class: transparent -->
+![](img/original-circuit.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    table {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p, li {
+        text-align: justify;
+        font-size: 20px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Passo 1
+
+<div class="flex-container">
+<div class="flex-column">
+
+Através do método das correntes da malha, determine a potência dissipada pelo resistor de $4\Omega$.
+
+1. Identifique as \\(M\\) malhas do circuito, enumere-as e atribua uma corrente de malha \\(i_k | k = 1 \ldots M \\) — com sentido arbitrário — a cada uma delas;
+
+| Malha     | Corrente  | Sentido |
+| --------- | --------- | ------- |
+| \\(M_1\\) | \\(i_1\\) | Horário |
+| \\(M_2\\) | \\(i_2\\) | Horário |
+| \\(M_3\\) | \\(i_3\\) | Horário |
+
+</div>
+<div class="flex-column">
+
+<!-- _class: transparent -->
+
+![](img/circuit-step-1.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    table {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p, li {
+        text-align: justify;
+        font-size: 16px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Passo 2
+
+<div class="flex-container">
+<div class="flex-column">
+
+Através do método das correntes da malha, determine a potência dissipada pelo resistor de $4\Omega$.
+
+2. Para cada resistor \\(R\\) dos \\(N\\) resistores do circuito, escreva sua corrente \\(i\_{R\_j} | j = 1 \ldots N \\) em função das correntes de malha que transitam sobre ele. Seus sentidos também são arbitrários, por isso, considere a tensão no ponto de entrada da corrente no resistor \\(i\_{R\_j}\\\) maior que a tensão no ponto de saída; Atribua um sinal de positivo no ponto da entrada da corrente e um sinal de negativo no ponto de saída;
+
+### Resistor de $5\Omega$
+
+Arbitramos para a corrente \\(i_{5\Omega}\\) o sentido da esquerda para a direia, como mostra o circuito ao lado.
+
+No resistor de \\(5\Omega\\), vemos que a corrente \\(i_1\\) da malha 1 entra na esquerda e sai pela direita, já a da malha 2, \\(i_2\\), no sentido oposto, da direita para a esquerda. Assim, a corrente \\(i_{5\Omega}\\) que passa pelo resistor de \\(5\Omega\\) é a diferença entre as correntes \\(i_1\\) e \\(i_2\\), ou seja:
+
+\\[i_{5\Omega} = i_1 - i_2\\]
+
+</div>
+<div class="flex-column">
+
+<!-- _class: transparent -->
+
+![](img/circuit-step-2.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    table {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p, li {
+        text-align: justify;
+        font-size: 16px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Passo 2
+
+<div class="flex-container">
+<div class="flex-column">
+
+### Resistor de $4\Omega$
+
+Arbitramos para a corrente \\(i_{4\Omega}\\) o sentido da direita para a esquerda, como mostra o circuito ao lado.
+
+No resistor de \\(4\Omega\\), vemos que a corrente \\(i_2\\) da malha 2 entra na direita e sai pela esquerda, já a da malha 3, \\(i_3\\), no sentido oposto, da esquerda para a direita. Assim, a corrente \\(i_{4\Omega}\\) que passa pelo resistor de \\(5\Omega\\) é a diferença entre as correntes \\(i_2\\) e \\(i_3\\), ou seja:
+
+\\[i_{4\Omega} = i_2 - i_3\\]
+
+### Resistor de $20\Omega$
+
+Arbitramos para a corrente \\(i_{20\Omega}\\) o sentido da esquerda para a direia, como mostra o circuito ao lado.
+
+No resistor de \\(20\Omega\\), vemos que a corrente \\(i_1\\) da malha 1 entra por cima e sai por baixo, já a da malha 3, \\(i_3\\), no sentido oposto, de baixo para cima. Assim, a corrente \\(i_{20\Omega}\\) que passa pelo resistor de \\(20\Omega\\) (que também é \\(i_{\phi}\\) é a diferença entre as correntes \\(i_1\\) e \\(i_3\\), ou seja:
+
+\\[i_{20\Omega} = i_{\phi} = i_1 - i_3\\]
+
+
+</div>
+<div class="flex-column">
+
+<!-- _class: transparent -->
+
+![](img/circuit-step-2.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    table {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p, li {
+        text-align: justify;
+        font-size: 24px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    h3 {
+        text-align: center;
+        font-size: 24px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Passo 2
+
+<div class="flex-container">
+<div class="flex-column">
+
+### Resistor de $1\Omega$
+
+Arbitramos para a corrente \\(i_{1\Omega}\\) o sentido da esquerda para a direita, como mostra o circuito ao lado. E podemos ver que sobre ele incide apenas a corrente da malha 2, \\(i_2\\), no mesmo sentido da corrente arbitrada.
+
+Assim: 
+
+\\[i_{1\Omega} = i_2\\]
+
+</div>
+<div class="flex-column">
+
+<!-- _class: transparent -->
+
+![](img/circuit-step-2.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    table {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p, li {
+        text-align: justify;
+        font-size: 16px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Passo 3
+
+<div class="flex-container">
+<div class="flex-column">
+
+3. Para cada malha do circuito escreva LKT considerando em cada malha:
+    - As quedas (ou elevações) de tensão causadas pelo trânsito das correntes nos resistores;
+    - As quedas (ou elevações) de tensão causadas pelas fontes de tensão;
+    - As quedas (ou elevações) de tensão causadas pelas fontes de corrente;
+
+### Malha \\(M_1\\)
+
+Percorrendo a malha 1 no sentido horário após o nó superior da fonte de \\(50 \text{V}\\), temos:
+
+\\[
+\begin{align\*}
+&  & -5 i\_1 + 5 i\_2 - 20 i\_1 + 20 i\_3 + 50 &= 0 \therefore \\\\
+&  & -25 i\_1 + 5 i\_2 + 20 i\_3 &= -50 \therefore \\\\
+&  & 25 i\_1 - 5 i\_2 - 20 i\_3 &= 50 \quad (1)
+\end{align\*}
+\\]
+
+</div>
+<div class="flex-column">
+
+<!-- _class: transparent -->
+
+![](img/circuit-step-2.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    table {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p, li {
+        text-align: justify;
+        font-size: 16px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Passo 3
+
+<div class="flex-container">
+<div class="flex-column">
+
+### Malha \\(M_2\\)
+
+Percorrendo a malha 2 no sentido horário após o nó inferior de \\(R = 1 \Omega\\), temos:
+
+\\[
+\begin{align\*}
+&  & -i\_2 - 4 i\_2 + 4 i\_3 + 5 i\_1 - 5 i\_2 = 0 \therefore \\\\
+&  & -10 i\_2 + 5 i\_1 + 4 i\_3 = 0 \therefore \\\\
+&  & 10 i\_2 - 5 i\_1 - 4 i\_3 = 0 \therefore \\\\
+&  & 5 i\_1 - 10 i\_2 + 4 i\_3 = 0 \quad (2)
+\end{align\*}
+\\]
+
+### Malha \\(M_3\\)
+
+Percorrendo a malha 3 no sentido horário após o nó anterior a \\(R = 4 \Omega\\), temos:
+
+\\[
+\begin{align\*}
+4 i\_2 - 4 i\_3 - 15 i\_1 + 15 i\_3 + 20 i\_1 - 20 i\_3 = 0 \therefore \\\\
+5 i\_1 + 4 i\_2 - 9 i\_3 = 0 \quad (3)
+\end{align\*}
+\\]
+
+
+</div>
+<div class="flex-column">
+
+<!-- _class: transparent -->
+
+![](img/circuit-step-2.png)
+
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    table {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p, li {
+        text-align: justify;
+        font-size: 16px;
+    }
+    figcaption {
+        font-size: 12px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-size: 28px;
+    }
+    h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .flex-container > div {
+        margin-right: 10px;
+    }
+    .left-element {
+        flex: 3;
+    }
+    .right-element {
+        flex: 1;
+    }
+    .flex-column {
+        flex: 1;
+    }
+</style>
+
+## Método das Correntes das Malhas - Passo 4
+
+<iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=metodo-das-correntes-de-malha.ipynb" width="100%" height="100%"></iframe>
+
+<div class="flex-container">
+<div class="flex-column">
+</div>
+<div class="flex-column">
+</div>
+</div>
+
+
+---
+
+<style scoped>
+    img {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-paragraph {
+        flex: 2;
+        margin-right: 10px;
+        text-align: justify;
+    }
+    .flex-column {
+        flex: 1;
+        margin-right: 10px;
+    }
+    .flex-image {
+        flex: 2;
+    }
+    li, p, table {
+        font-size: 18px;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h3 {
+        text-align: center;
+    }
+</style>
+
+## Método das Correntes nas Malhas - Conclusões
+
+<div class="flex-container">
+<div class="flex-column">
+
+### Vantagens
+
+- Reduz o número de equações a serem resolvidas;
+- Facilita a visualização do comportamento da estrutura;
+- Elimina a necessidade de se lidar com a LKC nos nós.
+
+</div>
+<div class="flex-column">
+
+### Desvantagens
+
+- Sobrecarga cognitiva nas operações de montagem das equações, o que facilita a ocorrência de erros de desatenção por esquecimento de termos ou sinais;
+    - Porque usando LKC nos nós, LKT nas malhas e Lei de Ohm, a montagem das equações é mais simples e direta;
+- É deficiente em circuito não planares (onde cabos se cruzam) e em circuitos com fontes de corrente compartilhadas entre malhas.
+- Não deve ser usado se não houver ao menos um elemento independente (não compartilhado) em cada uma das malhas.
+
+</div>
+</div>
+
+### Exercício
+
+Resolva o circuito anterior pelo método tradicional e aponte a quantidade de equações que o método das correntes nas malhas eliminou.
+
+
+---
+
+<!-- _class: lead -->
+# Instrumentos Para Medição de Grandezas Elétricas
+
+
+---
+
+## Instrumentos de Medida - Voltímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O voltímetro é um instumento que mede as tensões (diferenças de potencial) que existem entre dois pontos quaisquer em um circuito elétrico;
+- Em um circuito, o voltímetro deve sempre ser ligado em paralelo ao elemento cuja tensão desejamos medir;
+
+<!-- _class: transparent -->
+![](./img/voltimetro_paralelo.png)
+
+- O voltímetro ideal não causa nenhuma alteração no circuito, por possuir resistência infinita;
+- O voltímetro real não apresenta resistência infinita, apenas uma resistência muito grande, destarte, causa pequenas alterações no circuito;
+- O voltímetro apresenta limites de tensões que consegue ler, temos de levar isso em consideração.
+
+</div>
+
+<div class="grid-element regular">
+
+<!-- _class: transparent -->
+![](./img/voltimetro.png)
+Exemplo de voltímetro analógico para tensões contínuas.
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Amperímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O amperímetro é um instumento que mede a corrente que passa em um elemento de um circuito elétrico;
+- Em um circuito, o amperímetro deve sempre ser ligado em série ao elemento cuja corrente desejamos medir;
+
+<!-- _class: transparent -->
+![](./img/amperimetro_serie.png)
+
+- O amperímetro ideal tem reistência nula;
+- O amperímetro real não apresenta resistência nula, apenas uma resistência muito pequena, destarte, por si só causa pequenas alterações nas correntes que lê.
+- Devemos nos atentar aos limites operacionais do instrumento;
+
+</div>
+
+<div class="grid-element regular">
+
+<!-- _class: transparent -->
+![](./img/amperimetro.png)
+Exemplo de amperímetro analógico.
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Ohmímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O ohmímetro é um instumento que mede a resistência de um elemento em um circuito elétrico;
+- Em um circuito, o ohmímetro deve sempre ser ligado aos terminais do elemento cuja resistência desejamos medir;
+- O circuito deve estar desenergizado para que a medida da resistência seja correta;
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/ohmimetro_paralelo.png)
+
+</center>
+
+</div>
+
+<div class="grid-element regular">
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/ohmimetro.png)
+Exemplo de ohmímetro analógico.
+
+</center>
+
+- O ohmímetro é um elemento que dispõe de uma fonte de tensão estável $V$, que ao se conectar aos terminais de um elemento (resistor) faz circular uma corrente elétrica por ele.
+- Essa corrente elétrica $I$ é medida pelo instrumento e pela lei de Ohm, ele nos mostra a resistência calculada pela equação $R = {V \over I}$.
+- Devemos nos atentar aos limites operacionais do instrumento;
+
+</div>
+
+</div>
+
+
+---
+
+## Instrumentos de Medida - Multímetro
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+- O multímetro é um instumento que mede as três grandezas elétricas principais $- V, R, I -$, como também capacitância, indutância e continuidade de circuitos;
+- Funciona através de pontas de prova e chaves seletoras das grandezas (e suas escalas);
+- Está disponível em múltiplos preços, variando de R$ 16,00 a 2,5 salários mínimos.
+- É necessário se ater a seus limites operacionais;
+- Funciona da mesma forma que os outros três instrumentos e deve ser aplicado aos circuitos de acordo com o esperado para a grandeza a se medir;
+    - Exemplo: em série ao elemento, se a grandeza medida for corrente, em paralelo se for tensão e em paralelo com o circuito desenergizado se for resistência;
+- Disponíveis nos nossos laboratórios, serão usados na questão experimental da atividade avaliativa 1;
+
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/multimetro_paralelo.png)
+
+</center>
+
+</div>
+
+<div class="grid-element regular">
+
+<center>
+
+<!-- _class: transparent -->
+![](./img/multimetro.png)
+Exemplo de multímetro digital.
+
+</center>
+
+</div>
+
+</div>
+
+
+---
+
+## Desafio
+
+Os cinco primeiros estudantes que entregarem a matriz do sistema linear das correntes do circuito de exemplo dessa aula em sua forma escada pelo método de gauss, demonstrando cada operação de combinação linear entre as linhas da matriz para sua transformação na sua forma escada e em formato LATEX ganharão cinco pontos extras. Os demais que entregarem, mas, não forem os cinco primeiros, ganharão 2 pontos extras.
+
+A forma escada difere da forma escada reduzida por linhas porque na última, todos os elementos acima e abaixo do elemento $A_{ii}$ são zero. Na forma escada, apenas os elementos abaixo de $A_{ii}$ são nulos.
+
+
+---
+
+## Lista 3 de Exercícios
+
+<div class="grid-50-50">
+
+<div class="grid-element regular">
+
+Problemas 2.18 ao 2.26 do capítulo 2 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel e exercícios — somente os exercícios com respostas para conferência no final do livro — do capítulo 4, seções 4.1 a 4.8 do livro Circuitos Elétricos 8ª Ed. de Nilsson e Riedel.
+
+### Respostas dos Exercícios Pares do capítulo 2 (para conferência)
+
+2.18
+- a) $i_{a} = 2A, i_{b} = 0.5A, i_{g} = 2.5A$
+- os questões subsequentes derivam das respostas da a)
+
+2.20
+- a) $v_{o} = 16V, i_{0} = 8 mA$
+- b) $i_{g} = 10 mA$
+- c) $P = 160mW$
+
+2.22
+
+- a) $R = 7 \Omega$
+- b) $P = 1 kW$
+
+</div>
+
+<div class="grid-element regular">
+
+2.24
+
+- a) $i_{cd} = 33.33mA, i_{ab} = i_{bd} = 66.67mA, i_{bc} = 0$
+    $P_{5k\Omega} = 22.22W, P_{7.5k\Omega} = 33.33W$, 
+    $P_{10k\Omega} = 11.11W, P_{15k\Omega} = 16.67W, P_{4k\Omega} = 0$
+- b) A queda de tensão na fonte de corrente é de $833.33 V$ e a potência do circuito é de $83.33W$
+- c) $83.33W$
+
+2.26
+
+- a)
+$$
+\begin{align}
+    p_{130} &= -1950 W \\
+    p_{460} &= -13800 W
+\end{align}
+$$
+
+- b) A potência total fornecida é de $15750W$ e somando as potências dissipadas nos resistores, verifica-se que a potência total dissipada é igual à potência total fornecida.
+
+</div>
+
+</div>
+
+
+---
+
+# Para Casa!
+
+Brincar com o sympy e o numpy para resolver sistemas lineares com variáveis simbólicas (sympy) e com variáveis numéricas (numpy).
+
+
+---
+
+<div class="cabecalho large">
+Referências Bibliográficas
+</div>
+<div class="conteudo normal">
+
+- RIEDEL, SUSAN A.; NILSSON, James W. - Circuitos Elétricos 10ª ed. 2015.
+- MELO, EMERSON G. de. Curso: LOM3202 - Circuitos Elétricos (2020). 2020. Disponível em: https://edisciplinas.usp.br/course/view.php?id=82680. Acesso em 31 de Julho de 2023.
+- Khan Academy. Curso de Engenharia Elétrica. Disponível em: https://pt.khanacademy.org. Acesso em 31 de Julho de 2023.
+- CLEAVER, THOMAS G. - ECE220 Lesson 3 - Acesso em 27 de Agosto de 2023. https://engineering.louisville.edu/raise/EE220/L3.html.
+- DE ARAÚJO, THABATTA M. A. - SLIDES E NOTAS DE AULAS - Acesso em 21 de Agosto de 2023. Disponível junto à profª Thabatta.
+
+</div>

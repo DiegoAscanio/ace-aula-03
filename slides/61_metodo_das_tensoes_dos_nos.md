@@ -5,7 +5,7 @@
     }
 </style>
 
-## Método da Tensão nos Nós — Exemplo e Algortimo
+## Método da Tensão nos Nós — Exemplo e Algoritmo
 
 O cerne do método das tensões dos nós está em encontrar as diferenças de potencial nos nós de um circuito em relação ao nó de referência e a partir destas tensões, especificar as correntes que transitam pelos nós do circuito em função de tal tensão. Portanto, o método pode ser sistematizado em 6 passos:
 
